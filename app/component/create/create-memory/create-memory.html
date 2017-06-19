@@ -1,0 +1,62 @@
+<section class="create-memory">
+  <h2>Create Memory</h2>
+  <form name="createMemoryForm"
+  class="create-memory-form"
+  ng-submit="createMemoryCtrl.createMemory()">
+
+    <fieldset>
+      <label for="title">Title</label>
+      <input type="text"
+        name="title"
+        ng-model="createMemoryCtrl.memory.title"
+        required>
+    </fieldset>
+
+    <fieldset>
+      <label for="description">Description</label>
+      <input type="text"
+        name="description"
+        ng-model="createMemoryCtrl.memory.description"
+        required>
+    </fieldset>
+
+    <!-- <fieldset>
+      <label for="location">Location</label>
+      <input type="text"
+        name="location"
+        placeholder="location"
+        ng-model="createMemoryCtrl.memory.location"
+        required>
+    </fieldset> -->
+
+
+    <fieldset>
+      <label for="date">Date</label>
+      <input type="date"
+        name="date"
+        ng-model="createMemoryCtrl.memory.date"
+        required>
+    </fieldset>
+
+
+    <fieldset>
+      <label for="song">Song</label>
+      <input type="text"
+        name="song"
+        ng-model="createMemoryCtrl.memory.song">
+    </fieldset>
+
+
+    <fieldset>
+      <label for="friends">Friends</label>
+      <input type="text"
+        name="friends"
+        ng-model="createMemoryCtrl.memory.friends">
+    </fieldset>
+
+    <upload-pic-controller></upload-pic-controller>
+
+    <button type="submit">Create Memory</button>
+
+  </form>
+</section>
