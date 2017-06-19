@@ -47,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        use: 'htmp-loader',
+        use: 'html-loader',
       },
       {
         // might need to move this to url-loader
