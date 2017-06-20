@@ -1,0 +1,16 @@
+<li class="memory-item">
+  <div ng-if="!memoryItemCtrl.showEditMemory">
+    <div>
+      <span>{{ memoryItemCtrl.memory.title }}</span>
+      <span>{{ memoryItemCtrl.memory.description }}</span>
+      <span>{{ memoryItemCtrl.memory.location }}</span>
+      <span>{{ memoryItemCtrl.memory.date }}</span>
+      <span>{{ memoryItemCtrl.memory.song }}</span>
+      <span>{{ memoryItemCtrl.memory.friends }}</span>
+    </div>
+  </div>
+
+  <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
+
+  <button ng-click="memoryItemCtrl.showEditMemory =!memoryItemCtrl.showEditMemory">Edit</button>
+</li>

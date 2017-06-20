@@ -87,8 +87,8 @@ module.exports = [
           if(ele._id === res.data._id) service.memories[idx] = res.data;
         });
         return res.data;
-      },
-      err => {
+      })
+      .catch(err => {
         $log.error(err.message);
         return $q.reject(err);
       });
