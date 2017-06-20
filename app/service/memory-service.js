@@ -96,12 +96,12 @@ module.exports = [
       });
     };
 
-    service.deleteMemory = (memory) => {
+    service.deleteMemory = (memoryId) => {
       $log.debug('service.deleteMemory');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/memory/${memory._id}`;
+        let url = `${__API_URL__}/api/memory/${memoryId}`;
 
         let config = {
           headers: {
@@ -114,12 +114,13 @@ module.exports = [
       })
       .then(
         res => {
-          service.memories.forEach((ele, idx) => {
-            if(ele._id === res.data._id) {
+          service.memories.filter((ele, idx) => {
+            if(ele._id === memoryId) {
               service.memories.splice(idx, 1);
             }
           });
-          return service.memories;
+  
+          return res.data;
         },
         err => {
           $log.error(err.message);
