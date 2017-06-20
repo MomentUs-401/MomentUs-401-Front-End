@@ -12,7 +12,7 @@ module.exports = {
     this.$onInit = () => {
       $log.debug('Delete Memory Controller');
       this.deleteMemory = () => {
-        memoryService.deleteMemory(this.memory._id, this.memory);
+        memoryService.deleteMemory(this.memory._id);
       };
     };
   }],

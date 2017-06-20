@@ -21,7 +21,7 @@ module.exports = {
           this.memory.location = null;
           this.memory.date = null;
           this.memory.description = null;
-          this.memory.song = null;
+          this.memory.songTitle = null;
           this.memory.friends = null;
 
           $rootScope.$emit('newMemoryCreated');
