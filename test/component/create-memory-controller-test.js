@@ -10,9 +10,9 @@ describe('Testing the Create Memory Controller', function() {
       this.$httpBackend - $httpBackend;
       this.$window = $window;
       this.$componentController = $componentController;
-      this.createMemoryCtrl = $componentController('CreateMemoryController');
+      this.createMemoryCtrl = $componentController('createMemoryController');
+      done();
     });
-    done();
   });
   
   beforeEach(done => {
@@ -30,7 +30,7 @@ describe('Testing the Create Memory Controller', function() {
   
   describe('Testing the createMemory method', () => {
     it('should make a valid POST request to create a new memory', done => {
-      let expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      let expectUrl = `${__API_URL__}/api/memory`;
 
       let expectHeaders = {
         Accept: 'application/json',

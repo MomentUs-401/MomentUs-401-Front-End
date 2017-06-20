@@ -12,8 +12,8 @@ describe('Testing the Delete Memory Controller', function () {
       this.$componentController = $componentController;
       this.authService = authService;
       this.deleteMemoryCtrl = $componentController('deleteMemoryController');
+      done();
     });
-    done();
   });
   
   beforeEach(done => {
@@ -48,7 +48,7 @@ describe('Testing the Delete Memory Controller', function () {
     });
     
     it('should delete the memory', done => {
-      let expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      let expectUrl = `${__API_URL__}/api/memory`;
       
       let expectHeaders = {
         Accept: 'application/json',

@@ -12,8 +12,8 @@ describe('Testing the Dashboard Controller', function() {
       this.dashboardCtrl = new $controller('DashboardController');
       this.memoryService = memoryService;
       this.$window.localStorage.setItem('token', 'test token');
+      done();
     });
-    done();
   });
   
   afterEach(done => {
@@ -43,7 +43,7 @@ describe('Testing the Dashboard Controller', function() {
   
   describe('Testing the fetchMemories method', () => {
     beforeEach(done => {
-      this.expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      this.expectUrl = `${__API_URL__}/api/memory`;
       
       this.expectHeaders = {
         'Accept': 'application/json',

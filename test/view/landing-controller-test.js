@@ -9,8 +9,8 @@ describe('Testing the Landing Controller', function() {
     angular.mock.inject(($controller) => {
       this.landingCtrl = new $controller('LandingController');
       this.landingCtrl.$onInit();
+      done();
     });
-    done();
   });
   
   it('Should not show the signup feature', done => {
