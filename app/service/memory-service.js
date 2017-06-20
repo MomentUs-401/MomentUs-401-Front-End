@@ -25,11 +25,13 @@ module.exports = [
           },
         };
 
-        return $http.post(`${${__API_URL__}}/api/memory`, memory, config);
+        console.log('did it hit this', memory);
+        console.log('token?', token);
+        return $http.post(`${__API_URL__}/api/memory`, memory, config);
+
       })
       .then(res => {
         $log.log('Memory created successfully');
-
         let memory = res.data;
         service.memories.unshift(memory);
         return memory;
@@ -53,7 +55,7 @@ module.exports = [
           },
         };
 
-        return $http.get(`${${__API_URL__}}/api/memory`, config);
+        return $http.get(`${__API_URL__}/api/memory`, config);
       })
       .then(res => {
         $log.log('Memories retrieved');
@@ -71,7 +73,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${${__API_URL__}}/api/memory/${memory._id}`;
+        let url = `${__API_URL__}/api/memory/${memory._id}`;
 
         let config = {
           headers: {
@@ -87,8 +89,8 @@ module.exports = [
           if(ele._id === res.data._id) service.memories[idx] = res.data;
         });
         return res.data;
-      },
-      err => {
+      })
+      .catch(err => {
         $log.error(err.message);
         return $q.reject(err);
       });
@@ -99,7 +101,7 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let url = `${${__API_URL__}}/api/memory/${memory._id}`;
+        let url = `${__API_URL__}/api/memory/${memory._id}`;
 
         let config = {
           headers: {
