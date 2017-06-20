@@ -8,19 +8,26 @@ module.exports = {
   controller: [
     '$log',
     '$location',
+    '$window',
     'authService',
-    function($log, $location, authService) {
+    function($log, $location, $window, authService) {
       this.$onInit = () => {
         $log.debug('loginCtrl');
-        
-        authService.getToken()
-        .then(() => $location.url('/dashboard'));
-        
+
+        if(!$window.localStorage.token) {
+          authService.getToken()
+          .then(
+            () => $location.url('/dashboard'),
+            () => $location.url('/signup')
+          );
+        }
+
         this.login = function() {
-          $log.debug('loginCtrl.login');
-          
-          return authService.lovin(this.user)
-          .then(() => $location.url('./dashboard'));
+          $log.debug('loginCtrl.login()');
+
+          authService.login(this.user)
+          .then(() => $location.url('/dashboard'));
+
         };
       };
     },

@@ -5,7 +5,7 @@ const webpack = require('webpack');
 const HTMLPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 dotenv.load();
 
@@ -22,13 +22,13 @@ let plugins = [
 
 if(production) {
   plugins = plugins.concat([
-    // new webpack.optimize.UglifyJsPlugin({
-    //   mangle: true,
-    //   compress: {
-    //     warnings: false,
-    //   },
-    // }),
-    new UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: true,
+      compress: {
+        warnings: false,
+      },
+    }),
+    // new UglifyJsPlugin(),
     new CleanPlugin(),
   ]);
 }
