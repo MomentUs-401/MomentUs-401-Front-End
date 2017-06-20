@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 describe('Testing the Navigation Bar Controller', function () {
-  beforeEach(() => {
+  beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $componentController, $location, $window, authService) => {
       this.$rootScope = $rootScope;
@@ -23,18 +23,22 @@ describe('Testing the Navigation Bar Controller', function () {
       
       this.navbarCtrl.$onInit();
     });
+    done();
   });
   
-  afterEach(() => {
+  afterEach(done => {
     this.$rootScope.$apply();
     this.$window.localStorage.removeItem('token');
+    done();
   });
   
-  it('should have a method to check the path', () => {
+  it('should have a method to check the path', done => {
     expect(this.navbarCtrl).to.be.a('function');
+    done();
   });
   
-  it('should have a method for the user to log out', () => {
+  it('should have a method for the user to log out', done => {
     expect(this.navbarCtrl.logout).to.be.a('function');
+    done();
   });
 });

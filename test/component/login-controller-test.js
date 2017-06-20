@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 describe('Testing the Login Controller', function() {
-  beforeEach(() => {
+  beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
@@ -12,19 +12,22 @@ describe('Testing the Login Controller', function() {
       this.authService = authService;
       this.loginCtrl = $componentController('loginController');
     });
+    done();
   });
   
-  beforeEach(() => {
+  beforeEach(done => {
     this.loginCtrl.$onInit();
     this.$window.localStorage.setItem('token', 'test token');
+    done();
   });
   
-  afterEach(() => {
+  afterEach(done => {
     this.$window.localStorage.removeItem('token');
+    done();
   });
   
   describe('Testing the login method', () => {
-    it('should make a valid GET request to log in', () => {
+    it('should make a valid GET request to log in', done => {
       let expectUser = {
         username: 'user 1',
         email: 'test@test.com',
@@ -53,6 +56,7 @@ describe('Testing the Login Controller', function() {
         this.$httpBackend.flush();
         this.$rootScope.$apply();
       });
+      done();
     });
   });
 });

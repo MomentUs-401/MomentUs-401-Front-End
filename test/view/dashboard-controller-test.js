@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 describe('Testing the Dashboard Controller', function() {
-  beforeEach(() => {
+  beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $controller, $window, $httpBackend, memoryService) => {
       this.$rootScope = $rootScope;
@@ -13,31 +13,36 @@ describe('Testing the Dashboard Controller', function() {
       this.memoryService = memoryService;
       this.$window.localStorage.setItem('token', 'test token');
     });
+    done();
   });
   
-  afterEach(() => {
+  afterEach(done => {
     this.$window.localStorage.removeItem('token');
+    done();
   });
   
   describe('Testing the initial properties', () => {
-    beforeEach(() => {
+    beforeEach(done => {
       this.dashboardCtrl.$onInit();
+      done();
     });
     
-    it('should have a title property', () => {
+    it('should have a title property', done => {
       expect(this.dashboardCtrl.title).to.equal('Make Memories with MomentUs');
       expect(this.dashboardCtrl.title).to.be.a('string');
+      done();
     });
     
-    it('should have an empty memories array', () => {
+    it('should have an empty memories array', done => {
       expect(this.dashboardCtrl.memories).to.equal([]);
       expect(this.dashboardCtrl.memories).to.be.an('array');
       expect(this.dashboardCtrl.memories).to.be.empty;
+      done();
     });
   });
   
   describe('Testing the fetchMemories method', () => {
-    beforeEach(() => {
+    beforeEach(done => {
       this.expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
       
       this.expectHeaders = {
@@ -46,11 +51,13 @@ describe('Testing the Dashboard Controller', function() {
       };
       
       this.dashboardCtrl.$onInit();
+      done();
     });
     
-    afterEach(() => {
+    afterEach(done => {
       this.$httpBackend.flush();
       this.$rootScope.$apply();
+      done();
     });
     
     this.expectMemories = [
@@ -70,16 +77,18 @@ describe('Testing the Dashboard Controller', function() {
       },
     ];
     
-    it('should make a valid GET request', () => {
+    it('should make a valid GET request', done => {
       this.$httpBackend.expectGET(this.expectUrl, this.expectHeaders).respond(200);
       // should not need this line because of the beforeEach
       // this.dashboardCtrl.$onInit();
+      done();
     });
     
-    it('should retrieve the user\'s memories', () => {
+    it('should retrieve the user\'s memories', done => {
       this.$httpBackend.whenGET(this.expectUrl, this.expectHeaders).respond(200, this.expectMemories);
       // should not need this line because of the beforeEach
       // this.dashboardCtrl.$onInit();
+      done();
     });
   });
 });

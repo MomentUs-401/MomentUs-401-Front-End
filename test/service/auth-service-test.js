@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 describe('Auth Service test', function() {
-  beforeEach(() => {
+  beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($httpBackend, $window, $rootScope, authService) => {
       this.$httpBackend = $httpBackend;
@@ -11,10 +11,11 @@ describe('Auth Service test', function() {
       this.$rootScope = $rootScope;
       this.authService = authService;
     });
+    done();
   });
   
   describe('Testing the getToken method', () => {
-    it('should return a token', () => {
+    it('should return a token', done => {
       this.authService.token = null;
       this.$window.localStorage.setItem('token', 'test token');
       
@@ -25,6 +26,7 @@ describe('Auth Service test', function() {
       .catch(err => {
         expect(err).to.be.null;
       });
+      done();
     });
   });
   

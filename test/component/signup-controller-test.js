@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 
 describe('Testing the Signup Controller', function() {
-  beforeEach(() => {
+  beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {
       this.$rootScope = $rootScope;
@@ -12,25 +12,29 @@ describe('Testing the Signup Controller', function() {
       this.authService = authService;
       this.signupCtrl = $componentController('signupController');
     });
+    done();
   });
   
-  beforeEach(() => {
+  beforeEach(done => {
     this.signupCtrl.$onInit();
+    done();
   });
   
-  afterEach(() => {
+  afterEach(done => {
     this.$window.localStorage.removeItem('token');
+    done();
   });
   
   describe('Testing the initial properties', () => {
-    it('should have a title property', () => {
+    it('should have a title property', done => {
       expect(this.signupCtrl.title).to.equal('Please Sign In');
       expect(this.signupCtrl.title).to.be.a('string');
+      done();
     });
   });
   
   describe('Testing the signup method', () => {
-    it('should make a valid POST request to sign up', () => {
+    it('should make a valid POST request to sign up', done => {
       this.$window.localStorage.token = null;
       
       let expectUser = {
@@ -55,6 +59,7 @@ describe('Testing the Signup Controller', function() {
         this.$httpBackend.flush();
         this.$rootScope.$apply();
       });
+      done();
     });
   });
 });
