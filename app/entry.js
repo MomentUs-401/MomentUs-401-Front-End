@@ -26,6 +26,6 @@ context.keys().forEach(key => momentus.service(camelcase(path.basename(key, '.js
 
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => momentus.component(camelcase(path.basename(key, '.js')), context(key)));
-
-context = require.context('./filter/', true, /\.js$/);
-context.keys().forEach(key => momentus.filter(camelcase(path.basename(key, '.js')), context(key)));
+// 
+// context = require.context('./filter/', true, /\.js$/);
+// context.keys().forEach(key => momentus.filter(camelcase(path.basename(key, '.js')), context(key)));

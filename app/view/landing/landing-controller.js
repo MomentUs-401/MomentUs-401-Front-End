@@ -8,9 +8,7 @@ module.exports = [
   function($log, $location) {
     this.$onInit = () => {
       $log.debug('Landing Controller');
-      
-      this.title = 'Sign In';
-      
+            
       let url = $location.url();
       
       this.showSignup = url === '/join#signup' || url === '/join';
