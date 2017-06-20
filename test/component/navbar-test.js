@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-describe('Testing the navigation bar controller', function () {
+describe('Testing the Navigation Bar Controller', function () {
   beforeEach(() => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $componentController, $location, $window, authService) => {
