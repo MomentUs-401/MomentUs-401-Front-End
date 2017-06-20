@@ -11,8 +11,8 @@ describe('Testing the Signup Controller', function() {
       this.$httpBackend = $httpBackend;
       this.authService = authService;
       this.signupCtrl = $componentController('signupController');
+      done();
     });
-    done();
   });
   
   beforeEach(done => {
@@ -43,7 +43,7 @@ describe('Testing the Signup Controller', function() {
         password: 'password',
       };
       
-      let expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      let expectUrl = `${__API_URL__}/api/memory`;
       
       let expectConfig = {
         headers: {

@@ -11,8 +11,8 @@ describe('Testing the Login Controller', function() {
       this.$httpBackend = $httpBackend;
       this.authService = authService;
       this.loginCtrl = $componentController('loginController');
+      done();
     });
-    done();
   });
   
   beforeEach(done => {
@@ -34,7 +34,7 @@ describe('Testing the Login Controller', function() {
         password: 'password',
       };
       
-      let expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      let expectUrl = `${__API_URL__}/api/memory`;
 
       let base64 = this.$window.btoa(`${expectUser.username}:${expectUser.password}`);
       

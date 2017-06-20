@@ -12,8 +12,8 @@ describe('Testing the Edit Memory Component', function() {
       this.$componentController = $componentController;
       this.authService = authService;
       this.editMemoryCtrl = $componentController('editMemoryController');
+      done();
     });
-    done();
   });
   
   beforeEach(done => {
@@ -46,7 +46,7 @@ describe('Testing the Edit Memory Component', function() {
     });
     
     it('should update the gallery', done => {
-      let expectUrl = 'https://momentus-backend1.herokuapp.com/api/memory';
+      let expectUrl = `${__API_URL__}/api/memory`;
 
       let expectHeaders = {
         Accept: 'application/json',

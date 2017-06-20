@@ -22,8 +22,8 @@ describe('Testing the Navigation Bar Controller', function () {
       );
       
       this.navbarCtrl.$onInit();
+      done();
     });
-    done();
   });
   
   afterEach(done => {
