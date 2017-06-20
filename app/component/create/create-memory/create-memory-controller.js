@@ -13,6 +13,7 @@ module.exports = {
       this.memory = {};
 
       this.createMemory = () => {
+        console.log('what', this.memory);
         return memoryService.createMemory(this.memory)
         .then(() => {
           let res = this.memory;

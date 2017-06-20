@@ -13,8 +13,8 @@ module.exports = {
     this.$onInit = () => {
       $log.debug('Edit Memory Controller');
       this.updateMemory = () => {
-        memoryService.updateMemory(this.memory._id, this.memory);
+        memoryService.updateMemory(this.memory);
       };
-    };  
+    };
   }],
 };
