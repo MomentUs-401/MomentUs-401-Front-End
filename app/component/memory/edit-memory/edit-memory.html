@@ -1,0 +1,35 @@
+<section class="edit-memory">
+  <form class="edit-form"
+    name="editMemoryForm"
+    ng-submit="editMemoryCtrl.updateMemory()"
+    novalidate>
+
+  <fieldset>
+    <label for="title">Title:</label>
+    <input type="text" name="title" ng-model="editMemoryCtrl.memory.title">
+  </fieldset>
+
+  <fieldset>
+    <label for="description">Description:</label>
+    <input type="text" name="description" ng-model="editMemoryCtrl.memory.description">
+  </fieldset>
+
+  <fieldset>
+    <label for="description">Date:</label>
+    <input type="date" name="date" ng-model="editMemoryCtrl.memory.date">
+  </fieldset>
+
+  <fieldset>
+    <label for="song">Song:</label>
+    <input type="text" name="song" ng-model="editMemoryCtrl.memory.song">
+  </fieldset>
+
+  <fieldset>
+    <label for="friends">Friends:</label>
+    <input type="text" name="friends" ng-model="editMemoryCtrl.memory.friends">
+  </fieldset>
+
+  <button type="submit" name="submit update">Update</button>
+  </form>
+
+</section>

@@ -8,11 +8,11 @@ module.exports = [
   function($log, memoryService) {
     this.$onInit = () => {
       $log.debug('Dashboard Controller');
-      
+
       this.title = 'Make Memories with MomentUs';
-      
+
       this.memories = [];
-      
+
       this.fetchMemories = () => {
         return memoryService.fetchMemories()
         .then(memories => {
@@ -21,7 +21,7 @@ module.exports = [
         })
         .catch(err => $log.error(err));
       };
-            
+
       this.fetchMemories();
     };
   },

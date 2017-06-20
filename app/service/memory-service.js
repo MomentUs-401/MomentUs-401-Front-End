@@ -7,14 +7,14 @@ module.exports = [
   'authService',
   function($q, $log, $http, authService) {
     $log.debug('Memory Service');
-    
+
     let service = {};
-    
+
     service.memories = [];
-    
+
     service.createMemory = (memory) => {
       $log.debug('service.createMemory');
-      
+
       return authService.getToken()
       .then(token => {
         let config = {
@@ -24,12 +24,12 @@ module.exports = [
             Authorization: `Bearer ${token}`,
           },
         };
-        
+
         return $http.post(`${__API_URL__}/api/memory`, memory, config);
       })
       .then(res => {
         $log.log('Memory created successfully');
-        
+
         let memory = res.data;
         service.memories.unshift(memory);
         return memory;
@@ -39,10 +39,10 @@ module.exports = [
         return $q.reject(err);
       });
     };
-    
-    service.fetchMemories = (user) => {
+
+    service.fetchMemories = () => {
       $log.debug('service.fetchMemories');
-      
+
       return authService.getToken()
       .then(token => {
         let config = {
@@ -52,8 +52,8 @@ module.exports = [
             Authorization: `Bearer ${token}`,
           },
         };
-        
-        return $http.get(`${__API_URL__}/api/memory/${user._id}`, config);
+
+        return $http.get(`${__API_URL__}/api/memory`, config);
       })
       .then(res => {
         $log.log('Memories retrieved');
@@ -65,14 +65,14 @@ module.exports = [
         $q.reject(err);
       });
     };
-    
+
     service.updateMemory = (memory) => {
       $log.debug('service.updateMemory');
-      
+
       return authService.getToken()
       .then(token => {
         let url = `${__API_URL__}/api/memory/${memory._id}`;
-        
+
         let config = {
           headers: {
             Accept: 'application/json',
@@ -93,14 +93,14 @@ module.exports = [
         return $q.reject(err);
       });
     };
-    
+
     service.deleteMemory = (memory) => {
       $log.debug('service.deleteMemory');
-      
+
       return authService.getToken()
       .then(token => {
         let url = `${__API_URL__}/api/memory/${memory._id}`;
-        
+
         let config = {
           headers: {
             Accept: 'application/json',
@@ -125,7 +125,7 @@ module.exports = [
         }
       );
     };
-    
+
     return service;
   },
 ];
