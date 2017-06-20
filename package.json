@@ -13,7 +13,7 @@
     "test": "karma start --single-run",
     "start": "node server.js",
     "build": "webpack",
-    "heroku-postbuild": "webpack -p --progress",
+    "heroku-postbuild": "webpack --progress",
     "lint": "eslint ./**",
     "test-watch": "karma start --auto-watch",
     "build-watch": "webpack-dev-server --inline --hot"
@@ -69,6 +69,8 @@
     "karma-mocha-reporter": "^2.2.3",
     "karma-webpack": "^2.0.3",
     "mocha": "^3.4.2",
+    "uglify": "^0.1.5",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack-dev-server": "^2.4.5"
   }
 }
