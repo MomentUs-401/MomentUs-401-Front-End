@@ -5,19 +5,17 @@
 // const map = require('ngmap');
 
 
-
 module.exports = [
   '$log',
   '$location',
   '$scope',
   'NgMap',
   function($log, $location, $scope, NgMap) {
+    $scope.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${__API_KEY__}`;
     this.$onInit = () => {
       $log.debug('Map Controller');
       NgMap.getMap().then(function(map) {
-        console.log(map.getCenter());
-        console.log('markers', map.markers);
-        console.log('shapes', map.shapes);
+        
       });
     };
   },
