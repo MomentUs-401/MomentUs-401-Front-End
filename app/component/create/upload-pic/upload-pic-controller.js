@@ -8,35 +8,37 @@ module.exports = {
   controller: [
     '$log', '$q', '$http', 'Upload', 'authService', 
     function($log, $q, $http, Upload, authService) {
-      $log.debug('uploadPicCtrl');
-      
-      this.pic = {};
-      
-      return authService.getToken()
-      .then(token => {
-        let url = `${__API_URL__}/api/memory`;
+      this.$onInit = () => {
+        $log.debug('uploadPicCtrl');
         
-        let headers = {
-          Authorization: `Bearer ${token}`,
-          Accept: 'application/json',
-        };
+        this.pic = {};
         
-        return Upload.upload({
-          url,
-          headers,
-          method: 'POST',
-        });
-      })
-      .then(
-        res => {
-          this.memory.photo = res.data;
-          return res.data;
-        },
-        err => {
-          $log.error(err.message);
-          $q.reject(err);
-        }
-      );
+        return authService.getToken()
+        .then(token => {
+          let url = `${__API_URL__}/api/memory`;
+          
+          let headers = {
+            Authorization: `Bearer ${token}`,
+            Accept: 'application/json',
+          };
+          
+          return Upload.upload({
+            url,
+            headers,
+            method: 'POST',
+          });
+        })
+        .then(
+          res => {
+            this.memory.photo = res.data;
+            return res.data;
+          },
+          err => {
+            $log.error(err.message);
+            $q.reject(err);
+          }
+        );
+      };
     },
   ],
 };
