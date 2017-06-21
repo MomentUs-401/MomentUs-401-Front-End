@@ -1,0 +1,31 @@
+@import '../scss/lib/theme/theme';
+
+.navbar {
+
+  img {
+    width: 4em;
+    margin: 1em 0em 1em 2.5em;
+    float: left;
+  }
+
+  // h1 {
+  //   color: $white;
+  //   margin-top: 1.5em;
+  //   margin-left: 1em;
+  //   float: left;
+  // }
+
+  .btn-std {
+    background-color: $brand-secondary;
+    color: $brand-primary;
+    width: $box-std/1.5;
+    float: right;
+    margin-top: 2.5em;
+    margin-right: 3em;
+
+    &:hover {
+      background: $brand-secondary/1.5;
+    }
+  }
+
+}

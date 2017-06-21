@@ -1,6 +1,6 @@
 'use strict';
 
-// require('./navbar.scss');
+require('./_navbar.scss');
 
 module.exports = {
   template: require('./navbar.html'),

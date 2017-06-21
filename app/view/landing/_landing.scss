@@ -1,0 +1,37 @@
+@import '../scss/lib/theme/theme';
+
+.landing {
+
+  img {
+    width: 30vw;
+    margin-left: 4em;
+    margin-top: -.75em;
+    padding-bottom: $gutter-std
+  }
+  // margin-top: 5em;
+
+  .join-container {
+
+    .join-inner {
+
+      .form-msg {
+        font-size: 1em;
+        margin-left: 40vw;
+
+        p {
+          display: inline-block;
+        }
+
+      }
+    }
+  }
+
+  @media screen and (min-width: 980px) /* Desktop */ {
+  img {
+    width: 30vw;
+    margin-left: 11em;
+    margin-top: -2em;
+    padding-bottom: $gutter-std
+  }
+}
+}
