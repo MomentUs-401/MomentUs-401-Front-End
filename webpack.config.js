@@ -17,6 +17,7 @@ let plugins = [
   new webpack.DefinePlugin({
     __API_URL__: JSON.stringify(process.env.API_URL),
     __DEBUG__: JSON.stringify(!production),
+    __API_KEY__: JSON.stringify(process.env.API_KEY),
   }),
 ];
 
@@ -44,6 +45,7 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
       },
       {

@@ -8,6 +8,7 @@ const pascalcase = require('pascalcase');
 const angular = require('angular');
 const ngTouch = require('angular-touch');
 const ngAnimate = require('angular-animate');
+const ngMap = require('ngmap');
 
 require('@uirouter/angularjs');
 require('angular-ui-bootstrap');
