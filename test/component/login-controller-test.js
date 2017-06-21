@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-describe('Testing the Login Controller', function() {
+describe.only('Testing the Login Controller', function() {
   beforeEach(done => {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $componentController, $window, $httpBackend, authService) => {

@@ -74,13 +74,6 @@ describe('Testing the Delete Memory Controller', function () {
       this.deleteMemoryCtrl.memory = mockBindings.memory;
       
       expect(this.deleteMemoryCtrl.deleteMemory).to.not.throw();
-      
-      // Not sure if these will pass... 
-      expect(this.deleteMemoryCtrl.memory.title).to.be.null;
-      expect(this.deleteMemoryCtrl.memory.description).to.be.null;
-      expect(this.deleteMemoryCtrl.memory.date).to.be.null;
-      expect(this.deleteMemoryCtrl.memory.song).to.be.null;
-      expect(this.deleteMemoryCtrl.memory.friends).to.be.null;
       done();
     });
   });

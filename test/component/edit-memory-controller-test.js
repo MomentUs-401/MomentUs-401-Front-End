@@ -54,17 +54,6 @@ describe('Testing the Edit Memory Component', function() {
         Authorization: `Bearer ${this.$window.localStorage.token}`,
       };
       
-      let mockBindings = {
-        memory: {
-          title: 'Final Project Week',
-          description: 'Creating Momentus',
-          date: '06/20/2017',
-          song: 'Hello Seattle by Owl City',
-          friends: 'Abbi White, Allie Grampa, Steven Johnson, David Wheeler, Shelly Tang',
-          _id: '123',
-        },
-      };
-      
       let mockUpdate = {
         memory: {
           title: 'Code Fellows',
@@ -79,8 +68,9 @@ describe('Testing the Edit Memory Component', function() {
       
       this.$httpBackend.whenPUT(expectUrl, mockUpdate, expectHeaders).respond(200);
       
+      this.editMemoryCtrl.memory = mockUpdate.memory;
+      
       expect(this.editMemoryCtrl.updateMemory).to.not.throw();
-      // try using ".to.be" in expect statements if the tests below are failing
       expect(this.editMemoryCtrl.memory.title).to.equal('Code Fellows');
       expect(this.editMemoryCtrl.memory.description).to.equal('Hackerz');
       expect(this.editMemoryCtrl.memory.date).to.equal('06/21/2017');
