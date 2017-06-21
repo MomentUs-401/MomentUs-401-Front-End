@@ -7,7 +7,7 @@ describe('Testing the Create Memory Controller', function() {
     angular.mock.module('momentus');
     angular.mock.inject(($rootScope, $httpBackend, $window, $componentController) => {
       this.$rootScope = $rootScope;
-      this.$httpBackend - $httpBackend;
+      this.$httpBackend = $httpBackend;
       this.$window = $window;
       this.$componentController = $componentController;
       this.createMemoryCtrl = $componentController('createMemoryController');

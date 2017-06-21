@@ -34,7 +34,6 @@ describe('Testing the Dashboard Controller', function() {
     });
     
     it('should have an empty memories array', done => {
-      expect(this.dashboardCtrl.memories).to.equal([]);
       expect(this.dashboardCtrl.memories).to.be.an('array');
       expect(this.dashboardCtrl.memories).to.be.empty;
       done();
