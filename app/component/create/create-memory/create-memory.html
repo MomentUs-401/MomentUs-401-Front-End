@@ -29,6 +29,9 @@
       <label for="location" class="col-sm-2 control-label">Location</label>
       <div class="col-sm-10">
         <input type="text"
+          places-auto-complete
+          types="['geocode']"
+          on-place-changed="createMemoryCtrl.placeChanged()"
           name="location"
           class="form-control"
           ng-model="createMemoryCtrl.memory.location"
@@ -73,3 +76,4 @@
     <a class="btn btn-default" href="#!/dashboard" role="button">Cancel</a>
   </form>
 </section>
+<ng-map></ng-map>
