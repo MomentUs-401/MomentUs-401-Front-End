@@ -13,7 +13,7 @@ require('@uirouter/angularjs');
 require('angular-ui-bootstrap');
 require('ng-file-upload');
 
-const momentus = angular.module('momentus', ['ui.router', 'ngFileUpload', 'ngTouch', 'ngAnimate', 'ui.bootstrap']);
+const momentus = angular.module('momentus', ['ui.router', 'ngFileUpload', 'ngTouch', 'ngAnimate', 'ui.bootstrap', 'ngMap']);
 
 let context = require.context('./config/', true, /\.js$/);
 context.keys().forEach(path => momentus.config(context(path)));
@@ -26,6 +26,6 @@ context.keys().forEach(key => momentus.service(camelcase(path.basename(key, '.js
 
 context = require.context('./component/', true, /\.js$/);
 context.keys().forEach(key => momentus.component(camelcase(path.basename(key, '.js')), context(key)));
-// 
+//
 // context = require.context('./filter/', true, /\.js$/);
 // context.keys().forEach(key => momentus.filter(camelcase(path.basename(key, '.js')), context(key)));
