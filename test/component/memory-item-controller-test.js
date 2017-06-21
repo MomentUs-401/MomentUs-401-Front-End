@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-describe.only('Testing the Thumbnail Container Controller', function() { /* eslint-disable */
+describe('Testing the Memory Item Controller', function() { /* eslint-disable */
   beforeEach(done => {    
     angular.mock.module('momentus');
     angular.mock.inject(($componentController, $rootScope) => {
