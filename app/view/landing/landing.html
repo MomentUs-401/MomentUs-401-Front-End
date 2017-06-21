@@ -1,12 +1,12 @@
 <section class="landing">
-  <img src="../../../assets/logo-landing.png" alt="logo">
+  <img src="../../../assets/logo-landing.png" class="img-responsive" alt="logo">
 
   <div class="join-container"
     ng-if="landingCtrl.showSignup">
     <div class="join-inner">
       <signup-controller></signup-controller>
       <div class="form-msg">
-        <p>Already a Member?</p>
+        <p>Already a member?</p>
         <a href="/#!/login" ng-click="landingCtrl.showSignup=false">
           Sign In
         </a>
@@ -18,7 +18,7 @@
     <div class="join-inner">
       <login-controller></login-controller>
       <div class="form-msg">
-        <p>Want to Sign Up?</p>
+        <p>Need an account?</p>
         <a href="/#!/signup" ng-click="landingCtrl.showSignup=true">
           Sign Up
         </a>
