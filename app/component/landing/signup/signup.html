@@ -1,19 +1,21 @@
-<section>
-  <form ng-submit="signupCtrl.signup(signupCtrl.user)" novalidate>
-    <input type="text"
+<section class="signup">
+  <p>Sign Up</p>
+  <form ng-submit="signupCtrl.signup(signupCtrl.user)" class="signup-form" novalidate>
+    <input class="input-std" type="text"
       placeholder="username"
       ng-minlength="4"
+      uib-tooltip="must have at least 4 characters"
       ng-model="signupCtrl.user.username" required>
 
-    <input type="text"
+    <input class="input-std" type="text"
       placeholder="email"
       ng-model="signupCtrl.user.email" required>
 
-    <input type="password"
+    <input class="input-std" type="password"
       placeholder="password"
       ng-minlength="8"
       ng-model="signupCtrl.user.password" required>
 
-    <button type="submit">sign up</button>
+    <button class="btn-std" type="submit">sign up</button>
   </form>
 </section>

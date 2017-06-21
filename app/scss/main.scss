@@ -1,0 +1,26 @@
+// ### COMPONENT ###
+@import './lib/bootstrap/custom-bootstrap';
+// ### BASE ###
+@import './lib/base/reset';
+@import './lib/base/base';
+
+// ### LAYOUT ###
+@import './lib/layout/header';
+@import './lib/layout/footer';
+@import './lib/layout/content';
+
+// ### COMPONENTS ###
+@import '../component/landing/login/login';
+@import '../component/landing/signup/signup';
+@import '../component/navbar/navbar';
+// @import '../component/memory/delete-memory/delete-memory';
+// @import '../component/memory/edit-memory/edit-memory';
+// @import '../component/memory/memory-item/memory-item';
+// @import '../component/create/upload-pic/upload-pic';
+// @import '../component/create/create-memory/create-memory';
+
+// ### VIEWS ###
+@import '../view/dashboard/dashboard';
+@import '../view/landing/landing';
+// @import '../view/create/create';
+// @import '../view/map/map';

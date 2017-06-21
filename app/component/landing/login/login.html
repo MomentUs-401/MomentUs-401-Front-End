@@ -2,6 +2,7 @@
   <p>Sign In</p>
   <form
     name="loginForm"
+    class="login-form"
     ng-submit="loginCtrl.login()"
     novalidate>
       <div
@@ -10,6 +11,7 @@
           'success': loginForm.username.$valid
         }">
         <input type="text"
+          class="input-std"
           name="username"
           placeholder="username"
           ng-minlength="4"
@@ -21,12 +23,13 @@
           'success': loginForm.password.$valid
         }">
       <input type="password"
+        class="input-std"
         name="password"
         ng-disabled="loginForm.username.$invalid"
         placeholder="password"
         ng-minlength="8"
         ng-model="loginCtrl.user.password" required>
       </div>
-      <button type="submit">Sign In</button>
+      <button class="btn-std" type="submit">Sign In</button>
   </form>
 </section>
