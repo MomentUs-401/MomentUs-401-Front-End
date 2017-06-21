@@ -4,19 +4,23 @@
 
   img {
     width: 30vw;
-    margin-left: 4em;
+    margin-left: 5em;
     margin-top: -.75em;
     padding-bottom: $gutter-std
   }
-  // margin-top: 5em;
 
   .join-container {
 
     .join-inner {
 
       .form-msg {
-        font-size: 1em;
-        margin-left: 40vw;
+        font-size: 2.5vh;
+        margin-top: 1%;
+        margin-left: 5%;
+
+        a {
+          padding: 1%;
+        }
 
         p {
           display: inline-block;
@@ -26,12 +30,12 @@
     }
   }
 
-  @media screen and (min-width: 980px) /* Desktop */ {
-  img {
-    width: 30vw;
-    margin-left: 11em;
-    margin-top: -2em;
-    padding-bottom: $gutter-std
+    @media screen and (min-width: 980px) /* Desktop */ {
+    img {
+      width: 30vw;
+      margin-left: 11em;
+      margin-top: -2em;
+      padding-bottom: $gutter-std
+    }
   }
-}
 }

@@ -1,5 +1,6 @@
 <section>
   <h1>{{ dashboardCtrl.title }}</h1>
+  <a class="btn btn-default" href="/#!/memory" role="button">Create a memory</a>
   <ul>
     <memory-item-controller ng-repeat="item in dashboardCtrl.memories" memory="item"></memory-item-controller>
   </ul>

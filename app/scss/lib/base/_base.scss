@@ -36,6 +36,7 @@ a {
 }
 
 .input-sm {
+  // display: block;
   width: 70%;
   margin: 0 0 $gutter-sm 5%;
   padding: 1%;
@@ -43,35 +44,36 @@ a {
   font-size: .70em;
 }
 
-.btn-std {
-  width: $box-std;
-  background: $brand-primary;
-  color: $white;
-  border: none;
-  margin-bottom: 20px;
-  border-radius: .40em;
-  padding: 12px;
-  cursor: pointer;
-  transition: 350ms all;
-  font-size: .7em;
-
-  &:hover {
-    background: $brand-primary/2;
-  }
-}
-
-.btn-sm {
-  width: $box-std;
-  background: $brand-primary;
-  color: $white;
-  border: none;
-  border-radius: .40em;
-  padding: 10px;
-  cursor: pointer;
-  transition: 350ms all;
-  font-size: .6em;
-
-  &:hover {
-    background: $brand-primary/2;
-  }
-}
+//might not need this anymore
+// .btn-std {
+//   width: $box-std;
+//   background: $brand-secondary;
+//   color: $white;
+//   border: none;
+//   margin-bottom: 20px;
+//   border-radius: .40em;
+//   padding: 12px;
+//   cursor: pointer;
+//   transition: 350ms all;
+//   font-size: .6em;
+//
+//   &:hover {
+//     background: $brand-secondary*1.3;
+//   }
+// }
+//
+// .btn-sm {
+//   width: $box-std/1.5;
+//   background: $brand-secondary;
+//   color: $white;
+//   border: none;
+//   border-radius: .40em;
+//   padding: 10px;
+//   cursor: pointer;
+//   transition: 350ms all;
+//   font-size: .6em;
+//
+//   &:hover {
+//     background: $brand-secondary*1.3;
+//   }
+// }

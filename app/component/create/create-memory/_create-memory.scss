@@ -1,0 +1,18 @@
+@import '../scss/lib/theme/theme';
+
+.create-memory {
+
+  h2 {
+    text-align: center;
+  }
+  .form-horizontal {
+    padding: $gutter-sm;
+    margin-top: 3vw;
+    
+    .btn-default {
+      margin-top: 3vw;
+    }
+
+  }
+
+}

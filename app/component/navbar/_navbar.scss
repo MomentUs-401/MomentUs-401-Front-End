@@ -8,24 +8,11 @@
     float: left;
   }
 
-  // h1 {
-  //   color: $white;
-  //   margin-top: 1.5em;
-  //   margin-left: 1em;
-  //   float: left;
-  // }
 
-  .btn-std {
-    background-color: $brand-secondary;
-    color: $brand-primary;
-    width: $box-std/1.5;
+  .btn-default {
     float: right;
-    margin-top: 2.5em;
-    margin-right: 3em;
-
-    &:hover {
-      background: $brand-secondary/1.5;
-    }
+    margin-top: 1vh;
+    margin-right: 4vw;
   }
 
 }
