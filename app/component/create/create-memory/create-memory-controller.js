@@ -23,7 +23,7 @@ module.exports = {
           this.memory.description = null;
           this.memory.songTitle = null;
           this.memory.friends = null;
-
+          
           $rootScope.$emit('newMemoryCreated');
           return res;
         })
