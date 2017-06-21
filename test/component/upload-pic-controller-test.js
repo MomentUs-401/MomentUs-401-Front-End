@@ -2,7 +2,7 @@
 
 const expect = require('chai').expect;
 
-describe.only('Testing the Upload Pic Controller', function() { /* eslint-disable */
+describe('Testing the Upload Pic Controller', function() { /* eslint-disable */
   beforeEach(done => {    
     angular.mock.module('momentus');
     angular.mock.inject(($componentController, $rootScope) => {

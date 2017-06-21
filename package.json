@@ -16,7 +16,9 @@
     "heroku-postbuild": "webpack --progress",
     "lint": "eslint ./**",
     "test-watch": "karma start --auto-watch",
-    "build-watch": "webpack-dev-server --inline --hot"
+    "build-watch": "webpack-dev-server --inline --hot",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -63,6 +65,8 @@
     "angular-mocks": "^1.6.4",
     "babel-polyfill": "^6.23.0",
     "chai": "^4.0.2",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.1.1",
     "karma-mocha": "^1.3.0",
