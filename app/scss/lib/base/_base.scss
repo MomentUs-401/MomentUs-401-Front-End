@@ -28,11 +28,18 @@ a {
 
 .input-std {
   display: block;
-  width: 80%;
-  margin: $gutter-sm 0 $gutter-sm 5%;
-  padding: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  padding: 4px;
+  width: 220px;
+  height: 50px;
   border-radius: .40em;
-  font-size: 3vw;
+  font-size: 1em;
+
+  @media screen and (min-width: 640px) {
+    width: 500px;
+  }
 }
 
 .input-sm {
