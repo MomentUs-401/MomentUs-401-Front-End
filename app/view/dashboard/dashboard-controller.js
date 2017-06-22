@@ -15,11 +15,11 @@ module.exports = [
 
       this.fetchMemories = () => {
         return memoryService.fetchMemories()
-        .then(memories => {
-          this.memories = memories;
-          this.currentMemory = this.memories[0];
-        })
-        .catch(err => $log.error(err));
+          .then(memories => {
+            this.memories = memories;
+            this.currentMemory = this.memories[0];
+          })
+          .catch(err => $log.error(err));
       };
 
       this.fetchMemories();

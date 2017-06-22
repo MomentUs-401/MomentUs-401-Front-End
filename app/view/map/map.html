@@ -1,7 +1,10 @@
 <div class="all-pins`">
+
+  <marker position="location in mapCtrl.locations" on-click"></marker>
   <map center="the space needle" zoom="18" map-type-id="MapTypeId.SATELLITE" tilt="45">
     <marker ng-repeat="memory in mapCtrl.memories"></marker>
   </map>
+
   <input
     places-auto-complete types="['geocode']"
     placeholder="search for moments in other locations"
@@ -10,4 +13,5 @@
     type="text"
     name="location data"
     >
+
 </div>
