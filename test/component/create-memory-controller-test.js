@@ -21,13 +21,6 @@ describe('Testing the Create Memory Controller', function() {
     done();
   });
   
-  afterEach(done => {
-    this.$window.localStorage.removeItem('token');
-    this.$httpBackend.flush();
-    this.$rootScope.$apply();
-    done();
-  });
-  
   describe('Testing the createMemory method', () => {
     it('should make a valid POST request to create a new memory', done => {
       let expectUrl = `${__API_URL__}/api/memory`;
@@ -40,9 +33,17 @@ describe('Testing the Create Memory Controller', function() {
       
       let expectMemory = {
         title: 'Final Project Week',
-        description: 'Creating Momentus',
         date: '06/20/2017',
-        song: 'Hello Seattle by Owl City',
+        location: {
+          lat: 1,
+          lng: 1,
+        },
+        description: 'Creating Momentus',
+        songTitle: 'Hello Seattle by Owl City',
+        photo: {
+          imageURI: 'https://lab-18.s3.amazonaws.com/14d59438798bfc18b7c268e9228c1384.png',
+          ObjectId: '14d59438798bfc18b7c268e9228c1384.png',
+        },
         friends: 'Abbi White, Allie Grampa, Steven Johnson, David Wheeler, Shelly Tang',
       };
 

@@ -2,15 +2,19 @@
 
 .signup {
 
-  p {
-    margin-left: 5%;
+  h2 {
+    font-family: $font-ttl;
+    text-align: center;
+    margin-top: 15px;
   }
 
   .signup-form {
 
     .btn-default {
-      margin-top: 1%;
-      margin-left: 5%;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
 
     .input-std {
