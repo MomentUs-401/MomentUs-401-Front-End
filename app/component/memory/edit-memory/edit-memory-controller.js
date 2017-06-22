@@ -12,8 +12,11 @@ module.exports = {
 
     this.$onInit = () => {
       $log.debug('Edit Memory Controller');
+      this.memoryUpdate = {};
+
       this.updateMemory = () => {
-        memoryService.updateMemory(this.memory);
+        if(this.memoryUpdate.date === null) delete this.memoryUpdate.date;
+        return memoryService.updateMemory(this.memoryUpdate, this.memory._id);
       };
     };
   }],

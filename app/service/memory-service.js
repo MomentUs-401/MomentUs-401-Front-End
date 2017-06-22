@@ -73,21 +73,25 @@ module.exports = [
       });
     };
 
-    service.updateMemory = (memory) => {
+    service.updateMemory = (memory, memoryId) => {
       $log.debug('service.updateMemory');
 
       return authService.getToken()
       .then(token => {
-        let url = `${__API_URL__}/api/memory/${memory._id}`;
+        let url = `${__API_URL__}/api/memory/${memoryId}`;
 
-        let config = {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
+        let headers = {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         };
-        return $http.put(url, memory, config);
+
+        return Upload.upload({
+          url,
+          headers,
+          method: 'PUT',
+          data: memory,
+        });
       })
       .then(res => {
         service.memories.forEach((ele, idx) => {
