@@ -119,7 +119,7 @@ module.exports = [
               service.memories.splice(idx, 1);
             }
           });
-  
+
           return res.data;
         },
         err => {

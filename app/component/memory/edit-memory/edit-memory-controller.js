@@ -1,6 +1,6 @@
 'use strict';
 
-// require('./_edit-memory.scss');
+require('./_edit-memory.scss');
 
 module.exports = {
   template: require('./edit-memory.html'),

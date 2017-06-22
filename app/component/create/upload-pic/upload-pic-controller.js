@@ -6,22 +6,22 @@ module.exports = {
   template: require('./upload-pic.html'),
   controllerAs: 'uploadPicCtrl',
   controller: [
-    '$log', '$q', '$http', 'Upload', 'authService', 
+    '$log', '$q', '$http', 'Upload', 'authService',
     function($log, $q, $http, Upload, authService) {
       this.$onInit = () => {
         $log.debug('uploadPicCtrl');
-        
+
         this.pic = {};
-        
+
         return authService.getToken()
         .then(token => {
           let url = `${__API_URL__}/api/memory`;
-          
+
           let headers = {
             Authorization: `Bearer ${token}`,
             Accept: 'application/json',
           };
-          
+
           return Upload.upload({
             url,
             headers,

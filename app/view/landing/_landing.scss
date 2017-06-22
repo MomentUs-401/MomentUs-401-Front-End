@@ -28,6 +28,10 @@
           padding: 1%;
         }
 
+        a:hover {
+          color: $brand-primary;
+        }
+
         p {
           display: inline-block;
         }
