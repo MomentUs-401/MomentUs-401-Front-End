@@ -29,6 +29,7 @@ module.exports = [
         memoryService.fetchAllMemories()
           .then(markers => {
             vm.markers = markers;
+            vm.icon = '../../../assets/lock-marker.png';
           });
       };
       vm.fetchAllMemories();
