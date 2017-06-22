@@ -13,6 +13,7 @@ module.exports = {
       this.memoryLoc = {
         lat: null,
         lng: null,
+        name: null,
       };
 
       let vm = this;
@@ -22,6 +23,7 @@ module.exports = {
         vm.place = this.getPlace();
         vm.memoryLoc.lat = vm.place.geometry.location.lat();
         vm.memoryLoc.lng = vm.place.geometry.location.lng();
+        vm.memoryLoc.name = vm.place.formatted_address;
         vm.map.setCenter(vm.place.geometry.location);
       };
       NgMap.getMap().then(map => {

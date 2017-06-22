@@ -11,6 +11,7 @@
             class="form-control"
             ng-model="createMemoryCtrl.memory.title"''
             placeholder="Last Day of Code Fellows JavaScript 401"
+            ng-maxlength="100"
             required>
         </div>
     </div>
@@ -23,6 +24,7 @@
           class="form-control"
           ng-model="createMemoryCtrl.memory.description"
           placeholder="We presented our project 'MomentUs' and Scott told us we were his favorite group ever."
+          ng-maxlength="1000"
           required>
       </div>
     </div>
@@ -61,6 +63,7 @@
           class="form-control"
           ng-model="createMemoryCtrl.memory.songTitle"
           placeholder="'We are the Champions'"
+          ng-maxlength="100"
           >
       </div>
     </div>
@@ -72,7 +75,8 @@
           name="friends"
           class="form-control"
           ng-model="createMemoryCtrl.memory.friends"
-          placeholder="Stefan, Allie, David, Shelly, Abigail, Izzy the Dogg"
+          placeholder="Steven, Allie, David, Shelly, Abigail, Izzy the Dogg"
+          ng-maxlength="200"
           >
       </div>
     </div>
@@ -88,7 +92,7 @@
   </div>
 
 
-    <button class="btn btn-default top-margin" type="submit">Create Memory</button>
+    <button class="btn btn-default top-margin" type="submit" ng-disabled="createMemoryForm.$invalid">Create Memory</button>
     <a class="btn btn-default top-margin grey" href="#!/dashboard" role="button">Cancel</a>
 
   </form>

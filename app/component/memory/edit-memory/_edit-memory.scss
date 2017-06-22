@@ -2,8 +2,20 @@
 
 .edit-memory {
 
+
   .form-horizontal {
     margin-top: $gutter-sm*1.5;
+
+    span {
+      padding: 0;
+    }
+
+    .thumbnail-container {
+      .btn-info {
+        width: 20vh;
+        display: block;
+      }
+    }
   }
 
   .btn {
