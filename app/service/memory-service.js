@@ -28,7 +28,6 @@ module.exports = [
 
         console.log('did it hit this', memory);
         console.log('token?', token);
-        // return $http.post(`${__API_URL__}/api/memory`, memory, config);
         return Upload.upload({
           url,
           headers,

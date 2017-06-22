@@ -22,7 +22,7 @@ a {
   font-weight: bold;
 
   &:hover {
-  color: $brand-primary*1.5;
+  color: $brand-secondary;
   }
 }
 
@@ -32,7 +32,7 @@ a {
   margin: $gutter-sm 0 $gutter-sm 5%;
   padding: 2%;
   border-radius: .40em;
-  font-size: .70em;
+  font-size: 3vw;
 }
 
 .input-sm {

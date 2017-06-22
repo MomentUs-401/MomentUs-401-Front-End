@@ -1,18 +1,48 @@
-<li class="memory-item">
+<section class="memory-item">
   <div ng-if="!memoryItemCtrl.showEditMemory">
-    <div>
-      <span>{{ memoryItemCtrl.memory.title }}</span>
-      <span>{{ memoryItemCtrl.memory.description }}</span>
-      <span>{{ memoryItemCtrl.memory.location }}</span>
-      <span>{{ memoryItemCtrl.memory.date }}</span>
-      <span>{{ memoryItemCtrl.memory.songTitle }}</span>
-      <span>{{ memoryItemCtrl.memory.friends }}</span>
+    <div class="memory-container">
+      <div>
+        <span class="labels">Title:</span>
+        <span>{{ memoryItemCtrl.memory.title }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Description:</span>
+        <span>{{ memoryItemCtrl.memory.description }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Location:</span>
+        <span>{{ memoryItemCtrl.memory.location }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Date:</span>
+        <span>{{ memoryItemCtrl.memory.date }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Song:</span>
+        <span>{{ memoryItemCtrl.memory.songTitle }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Friends:</span>
+        <span>{{ memoryItemCtrl.memory.friends }}</span>
+      </div>
+
+      <div>
+        <span>{{ memoryItemCtrl.memory.photo }}</span>
+      </div>
+
     </div>
   </div>
 
-  <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
+  <div class="controls-container">
+    <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
 
-  <button ng-click="memoryItemCtrl.showEditMemory =!memoryItemCtrl.showEditMemory">Edit</button>
+    <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
 
-  <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
-</li>
+    <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+  </div>
+</section>
