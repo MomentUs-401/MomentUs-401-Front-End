@@ -46,14 +46,12 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="photo">Photo:</label>
-    <div class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 thumbnail-container">
       <img ng-hide="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memory.photo.imageURI">
       <img ng-show="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memoryUpdate.photo">
-      <span class="form-control" ngf-select type="photo" name="photo" ng-model="editMemoryCtrl.memoryUpdate.photo">Choose New Photo</span>
+      <span class="form-control btn btn-info" ngf-select type="photo" name="photo" ng-model="editMemoryCtrl.memoryUpdate.photo">Choose New Photo</span>
     </div>
   </div>
-
-
 
   <button class="btn btn-default" type="submit" name="submit update">Update</button>
   </form>

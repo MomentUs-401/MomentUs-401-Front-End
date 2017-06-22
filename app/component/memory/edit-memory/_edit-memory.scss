@@ -7,11 +7,15 @@
     margin-top: $gutter-sm*1.5;
 
     span {
-      // outline: 2px solid blue;
       padding: 0;
-
     }
 
+    .thumbnail-container {
+      .btn-info {
+        width: 20vh;
+        display: block;
+      }
+    }
   }
 
   .btn {
