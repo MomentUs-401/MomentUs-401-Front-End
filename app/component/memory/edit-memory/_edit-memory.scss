@@ -6,8 +6,10 @@
   .form-horizontal {
     margin-top: $gutter-sm*1.5;
 
-    .form-control {
-    
+    span {
+      // outline: 2px solid blue;
+      padding: 0;
+
     }
 
   }
