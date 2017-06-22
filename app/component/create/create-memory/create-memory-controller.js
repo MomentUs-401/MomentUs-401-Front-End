@@ -8,7 +8,6 @@ module.exports = {
   controller: ['$log', '$rootScope', 'memoryService', 'NgMap', function($log, $rootScope, memoryService, NgMap) {
 
     this.$onInit = () => {
-
       $log.debug('CreateMemoryController');
       this.memory = {};
       this.memoryLoc = {
@@ -32,8 +31,8 @@ module.exports = {
       this.createMemory = () => {
         this.memory.location = null;
         this.memory.location = this.memoryLoc;
-
-        return memoryService.createMemory(this.memory, this.memoryLoc)
+        console.log('****memory b4 mem service*****', this.memory.photo);
+        return memoryService.createMemory(this.memory)
         .then(() => {
           let res = this.memory;
           this.memory.title = null;
@@ -42,6 +41,7 @@ module.exports = {
           this.memory.description = null;
           this.memory.songTitle = null;
           this.memory.friends = null;
+          this.memory.photo = null;
 
           $rootScope.$emit('newMemoryCreated');
           return res;
