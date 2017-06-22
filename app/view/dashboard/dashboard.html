@@ -1,18 +1,14 @@
 <section class="dashboard">
   <h1>{{ dashboardCtrl.title }}</h1>
-  <a class="btn btn-default" href="/#!/memory" role="button">Create a memory</a>
-  <!-- <ul>
-    <memory-item-controller ng-repeat="item in dashboardCtrl.memories" memory="item"></memory-item-controller>
-  </ul> -->
+  <a class="btn btn-default create-btn" href="/#!/memory" role="button">Create a memory</a>
 
-  <uib-accordion>
-    <div uib-accordion-group class="panel-default"  ng-repeat="item in dashboardCtrl.memories" heading="{{item.title}}">
-      <memory-item-controller memory="item" currentMemory="dashboardCtrl.currentMemory"
-      memories="dashboardCtrl.memories">
+  <div class="accordion-div">
+    <uib-accordion>
+      <div uib-accordion-group class="panel-default"  ng-repeat="item in dashboardCtrl.memories" heading="{{item.title}}">
+        <memory-item-controller memory="item" currentMemory="dashboardCtrl.currentMemory"
+        memories="dashboardCtrl.memories">
       </memory-item-controller>
     </div>
-  <uib-accordion>
-
-
-
+    <uib-accordion>
+  </div>
 </section>
