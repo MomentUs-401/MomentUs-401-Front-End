@@ -15,6 +15,7 @@
   },
   "globals": {
     "__API_URI__": false,
+    "__API_URL__": false,
     "__API_KEY__": false,
     "__DEBUG__": false
   },
