@@ -6,56 +6,54 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="title">Title:</label>
-    <span>{{ editMemoryCtrl.memory.title }}</span>
-    <div class="col-sm-10">
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.title }}</span>
+    <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="text" name="title" ng-model="editMemoryCtrl.memoryUpdate.title" ng-maxlength="100">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="description">Description:</label>
-    <span>{{ editMemoryCtrl.memory.description }}</span>
-    <div class="col-sm-10">
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.description }}</span>
+    <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="text" name="description" ng-model="editMemoryCtrl.memoryUpdate.description" ng-maxlength="1000">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="date">Date:</label>
-    <span>{{ editMemoryCtrl.memory.date | date : 'longdate'}}</span>
-    <div class="col-sm-10">
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.date | date : 'longDate' }}</span>
+    <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memoryUpdate.date">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="song">Song:</label>
-    <span>{{ editMemoryCtrl.memory.songTitle }}</span>
-    <div class="col-sm-10">
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.songTitle }}</span>
+    <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="text" name="song" ng-model="editMemoryCtrl.memoryUpdate.songTitle" ng-maxlength="100">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="friends">Friends:</label>
-    <span>{{ editMemoryCtrl.memory.friends }}</span>
-    <div class="col-sm-10">
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.friends }}</span>
+    <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="text" name="friends" ng-model="editMemoryCtrl.memoryUpdate.friends" ng-maxlength="200">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="photo">Photo:</label>
-    <div class="col-sm-10">
+    <div class="col-md-8 thumbnail-container">
       <img ng-hide="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memory.photo.imageURI">
       <img ng-show="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memoryUpdate.photo">
-      <span class="form-control" ngf-select type="photo" name="photo" ng-model="editMemoryCtrl.memoryUpdate.photo">Choose New Photo</span>
+      <span class="form-control btn btn-info" ngf-select type="photo" name="photo" ng-model="editMemoryCtrl.memoryUpdate.photo">Choose New Photo</span>
     </div>
   </div>
 
-
-
   <button class="btn btn-default" type="submit" name="submit update" ng-disabled="editMemoryForm.$invalid">Update</button>
-  </form>
 
+  </form>
 </section>
