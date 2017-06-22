@@ -5,7 +5,6 @@ module.exports = [
   function($log) {
     this.$onInit = () => {
       $log.debug('CreateController()');
-
     };
   },
 ];

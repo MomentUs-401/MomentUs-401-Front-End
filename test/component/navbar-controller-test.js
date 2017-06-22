@@ -1,4 +1,4 @@
-'use strict';
+  'use strict';
 
 const expect = require('chai').expect;
 
@@ -12,7 +12,7 @@ describe('Testing the Navigation Bar Controller', function () {
       this.$location = $location;
       this.authService = authService;
       this.$componentController = $componentController;
-      this.$window.localStorate.setItem('token', 'test token');
+      this.$window.localStorage.setItem('token', 'test token');
       
       this.navbarCtrl = this.$componentController('navbarController',
         {
@@ -33,7 +33,7 @@ describe('Testing the Navigation Bar Controller', function () {
   });
   
   it('should have a method to check the path', done => {
-    expect(this.navbarCtrl).to.be.a('function');
+    expect(this.navbarCtrl.checkPath).to.be.a('function');
     done();
   });
   

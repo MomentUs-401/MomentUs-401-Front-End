@@ -1,0 +1,15 @@
+@import '../scss/lib/theme/theme';
+
+.dashboard {
+
+  h1 {
+    text-align: center;
+    font-family: $font-ttl;
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    @media screen and (min-width: 640px) {
+      font-size: 40px;
+    }
+  }
+}
