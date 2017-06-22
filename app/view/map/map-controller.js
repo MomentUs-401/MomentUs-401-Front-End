@@ -16,8 +16,6 @@ module.exports = [
 
       let vm = this;
       vm.markers = [];
-      console.log('MARKER ARRAY?', this.markers);
-      // this.markerPosition = 'the space needle';
 
       vm.types = ['geocode'];
       this.placeChanged = function() {
@@ -31,7 +29,6 @@ module.exports = [
         memoryService.fetchAllMemories()
           .then(markers => {
             vm.markers = markers;
-            console.log('ARRY PLZ', vm.markers);
           });
       };
       vm.fetchAllMemories();
