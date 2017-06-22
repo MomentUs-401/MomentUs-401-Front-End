@@ -3,10 +3,16 @@
 .landing {
 
   img {
-    width: 30vw;
-    margin-left: 5em;
-    margin-top: -.75em;
-    padding-bottom: $gutter-std
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    margin-top: -1em;
+    display: block;
+    padding-bottom: $gutter-std;
+    @media screen and (max-width: 640px) {
+      width: 80%;
+    }
   }
 
   .join-container {
@@ -22,20 +28,15 @@
           padding: 1%;
         }
 
+        a:hover {
+          color: $brand-primary;
+        }
+
         p {
           display: inline-block;
         }
 
       }
-    }
-  }
-
-    @media screen and (min-width: 980px) /* Desktop */ {
-    img {
-      width: 30vw;
-      margin-left: 11em;
-      margin-top: -2em;
-      padding-bottom: $gutter-std
     }
   }
 }

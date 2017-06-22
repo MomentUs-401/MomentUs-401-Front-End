@@ -29,6 +29,9 @@
       <label for="location" class="col-sm-2 control-label">Location</label>
       <div class="col-sm-10">
         <input type="text"
+          places-auto-complete
+          types="['geocode']"
+          on-place-changed="createMemoryCtrl.placeChanged()"
           name="location"
           class="form-control"
           ng-model="createMemoryCtrl.memory.location"
@@ -57,8 +60,6 @@
       </div>
     </div>
 
-    <upoad-pic-controller></upoad-pic-controller>
-
     <div class="form-group">
       <label for="friends" class="col-sm-2 control-label">Friends</label>
       <div class="col-sm-10">
@@ -69,9 +70,18 @@
       </div>
     </div>
 
-    <upload-pic-controller></upload-pic-controller>
+    <div class="form-group">
+      <label for="photoSelect">Photo Upload</label>
+      <span ng-hide="createMemoryCtrl.memory.photo" ngf-select type="photo" name="photoSelect" ng-model="createMemoryCtrl.memory.photo">Choose File</span>
+      <span ng-click="createMemoryCtrl.memory.photo = null" ng-show="createMemoryCtrl.memory.photo">Remove File</span>
+      <span>{{createMemoryCtrl.memory.photo.name}}</span>
+      <img ng-show="createMemoryCtrl.memory.photo.$valid" ngf-thumbnail="createMemoryCtrl.memory.photo">
+    </div>
+
+    <!-- <upload-pic-controller></upload-pic-controller> -->
 
     <button class="btn btn-default" type="submit">Create Memory</button>
     <a class="btn btn-default" href="#!/dashboard" role="button">Cancel</a>
   </form>
 </section>
+<ng-map></ng-map>

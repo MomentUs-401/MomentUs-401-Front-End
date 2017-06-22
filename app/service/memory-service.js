@@ -5,7 +5,8 @@ module.exports = [
   '$log',
   '$http',
   'authService',
-  function($q, $log, $http, authService) {
+  'Upload',
+  function($q, $log, $http, authService, Upload) {
     $log.debug('Memory Service');
 
     let service = {};
@@ -17,24 +18,28 @@ module.exports = [
 
       return authService.getToken()
       .then(token => {
-        let config = {
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-          },
+        let url = `${__API_URL__}/api/memory`;
+        let headers = {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         };
+
 
         console.log('did it hit this', memory);
         console.log('token?', token);
-        return $http.post(`${__API_URL__}/api/memory`, memory, config);
+        return Upload.upload({
+          url,
+          headers,
+          method: 'POST',
+          data: memory,
+        });
 
       })
       .then(res => {
         $log.log('Memory created successfully');
-        let memory = res.data;
-        service.memories.unshift(memory);
-        return memory;
+        service.memories.unshift(res.data);
+        return res.data;
       })
       .catch(err => {
         $log.error(err.message);
@@ -119,7 +124,7 @@ module.exports = [
               service.memories.splice(idx, 1);
             }
           });
-  
+
           return res.data;
         },
         err => {

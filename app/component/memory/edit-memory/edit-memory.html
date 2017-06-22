@@ -1,35 +1,45 @@
 <section class="edit-memory">
-  <form class="edit-form"
+  <form class="form-horizontal"
     name="editMemoryForm"
     ng-submit="editMemoryCtrl.updateMemory()"
     novalidate>
 
-  <fieldset>
-    <label for="title">Title:</label>
-    <input type="text" name="title" ng-model="editMemoryCtrl.memory.title">
-  </fieldset>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="title">Title:</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="title" ng-model="editMemoryCtrl.memory.title">
+    </div>
+  </div>
 
-  <fieldset>
-    <label for="description">Description:</label>
-    <input type="text" name="description" ng-model="editMemoryCtrl.memory.description">
-  </fieldset>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="description">Description:</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="description" ng-model="editMemoryCtrl.memory.description">
+    </div>
+  </div>
 
-  <fieldset>
-    <label for="description">Date:</label>
-    <input type="date" name="date" ng-model="editMemoryCtrl.memory.date">
-  </fieldset>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="description">Date:</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memory.date">
+    </div>
+  </div>
 
-  <fieldset>
-    <label for="song">Song:</label>
-    <input type="text" name="song" ng-model="editMemoryCtrl.memory.songTitle">
-  </fieldset>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="song">Song:</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="song" ng-model="editMemoryCtrl.memory.songTitle">
+    </div>
+  </div>
 
-  <fieldset>
-    <label for="friends">Friends:</label>
-    <input type="text" name="friends" ng-model="editMemoryCtrl.memory.friends">
-  </fieldset>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="friends">Friends:</label>
+    <div class="col-sm-10">
+      <input class="form-control" type="text" name="friends" ng-model="editMemoryCtrl.memory.friends">
+    </div>
+  </div>
 
-  <button type="submit" name="submit update">Update</button>
+  <button class="btn btn-default" type="submit" name="submit update">Update</button>
   </form>
 
 </section>
