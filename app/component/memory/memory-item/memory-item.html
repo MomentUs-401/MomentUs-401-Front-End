@@ -13,12 +13,12 @@
 
       <div>
         <span class="labels">Location:</span>
-        <span>{{ memoryItemCtrl.memory.location }}</span>
+        <span>{{ memoryItemCtrl.memory.location.name }}</span>
       </div>
 
       <div>
         <span class="labels">Date:</span>
-        <span>{{ memoryItemCtrl.memory.date | date }}</span>
+        <span>{{ memoryItemCtrl.memory.date | date : 'longDate' }}</span>
       </div>
 
       <div>
