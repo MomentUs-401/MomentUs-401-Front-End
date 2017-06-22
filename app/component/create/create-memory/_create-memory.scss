@@ -2,6 +2,10 @@
 
 .create-memory {
 
+  .red {
+    color: $red;
+  }
+
   h2 {
     text-align: center;
     font-family: $font-ttl;
@@ -11,11 +15,23 @@
       font-size: 40px;
     }
   }
+
+  .choose-file {
+    // display: inline-block;
+    width: 105px;
+    margin-top: 0;
+  }
+
+  .grey {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+  }
+
   .form-horizontal {
     padding: $gutter-sm;
     margin-top: 3vw;
 
-    .btn-default {
+    .top-margin {
       margin-top: 3vw;
     }
 
