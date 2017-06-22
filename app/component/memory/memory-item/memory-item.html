@@ -1,0 +1,47 @@
+<section class="memory-item">
+  <div ng-if="!memoryItemCtrl.showEditMemory">
+    <div class="memory-container">
+      <div>
+        <span class="labels">Title:</span>
+        <span>{{ memoryItemCtrl.memory.title }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Description:</span>
+        <span>{{ memoryItemCtrl.memory.description }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Location:</span>
+        <span>{{ memoryItemCtrl.memory.location.name }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Date:</span>
+        <span>{{ memoryItemCtrl.memory.date | date : 'longDate' }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Song:</span>
+        <span>{{ memoryItemCtrl.memory.songTitle }}</span>
+      </div>
+
+      <div>
+        <span class="labels">Friends:</span>
+        <span>{{ memoryItemCtrl.memory.friends }}</span>
+      </div>
+
+      <div>
+        <img ngf-thumbnail="memoryItemCtrl.memory.photo.imageURI">
+      </div>
+
+    </div>
+  </div>
+
+  <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
+
+  <div class="controls-container" ng-if="!memoryItemCtrl.showEditMemory">
+    <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
+    <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+  </div>
+</section>

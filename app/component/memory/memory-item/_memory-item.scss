@@ -1,0 +1,26 @@
+@import '../scss/lib/theme/theme';
+
+.memory-item {
+
+  span {
+
+    padding: 2em;
+    line-height: 2em;
+  }
+
+  .memory-container {
+    margin-top: 2em;
+
+    .labels {
+      font-weight: bold;
+    }
+  }
+
+  .controls-container {
+    margin-top: 1.5em;
+    
+    .btn {
+      margin-bottom: 1em;
+    }
+  }
+}

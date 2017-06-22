@@ -1,0 +1,52 @@
+@import '../scss/lib/theme/theme';
+
+.landing {
+
+  img {
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    margin-top: -1em;
+    display: block;
+    padding-bottom: $gutter-std;
+    @media screen and (max-width: 640px) {
+      width: 80%;
+    }
+  }
+
+  .join-container {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    .join-inner {
+
+      margin-left: auto;
+      margin-right: auto;
+
+      .form-msg {
+        font-size: 2.5vh;
+        margin-top: 1%;
+        margin-left: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 190px;
+        text-align: center;
+
+        a {
+          padding: 1%;
+        }
+
+        a:hover {
+          color: $brand-primary;
+        }
+
+        p {
+          display: inline-block;
+        }
+
+      }
+    }
+  }
+}
