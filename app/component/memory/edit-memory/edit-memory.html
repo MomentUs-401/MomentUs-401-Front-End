@@ -6,38 +6,54 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="title">Title:</label>
+    <span>{{ editMemoryCtrl.memory.title }}</span>
     <div class="col-sm-10">
-      <input class="form-control" type="text" name="title" ng-model="editMemoryCtrl.memory.title">
+      <input class="form-control" type="text" name="title" ng-model="editMemoryCtrl.memoryUpdate.title">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="description">Description:</label>
+    <span>{{ editMemoryCtrl.memory.description }}</span>
     <div class="col-sm-10">
-      <input class="form-control" type="text" name="description" ng-model="editMemoryCtrl.memory.description">
+      <input class="form-control" type="text" name="description" ng-model="editMemoryCtrl.memoryUpdate.description">
     </div>
   </div>
 
   <div class="form-group">
-    <label class="control-label col-sm-2" for="description">Date:</label>
+    <label class="control-label col-sm-2" for="date">Date:</label>
+    <span>{{ editMemoryCtrl.memory.date }}</span>
     <div class="col-sm-10">
-      <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memory.date">
+      <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memoryUpdate.date">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="song">Song:</label>
+    <span>{{ editMemoryCtrl.memory.songTitle }}</span>
     <div class="col-sm-10">
-      <input class="form-control" type="text" name="song" ng-model="editMemoryCtrl.memory.songTitle">
+      <input class="form-control" type="text" name="song" ng-model="editMemoryCtrl.memoryUpdate.songTitle">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="friends">Friends:</label>
+    <span>{{ editMemoryCtrl.memory.friends }}</span>
     <div class="col-sm-10">
-      <input class="form-control" type="text" name="friends" ng-model="editMemoryCtrl.memory.friends">
+      <input class="form-control" type="text" name="friends" ng-model="editMemoryCtrl.memoryUpdate.friends">
     </div>
   </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="photo">Photo:</label>
+    <div class="col-sm-10">
+      <img ng-hide="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memory.photo.imageURI">
+      <img ng-show="editMemoryCtrl.memoryUpdate.photo" ngf-thumbnail="editMemoryCtrl.memoryUpdate.photo">
+      <span class="form-control" ngf-select type="photo" name="photo" ng-model="editMemoryCtrl.memoryUpdate.photo">Choose New Photo</span>
+    </div>
+  </div>
+
+
 
   <button class="btn btn-default" type="submit" name="submit update">Update</button>
   </form>

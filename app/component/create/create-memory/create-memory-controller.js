@@ -31,7 +31,6 @@ module.exports = {
       this.createMemory = () => {
         this.memory.location = null;
         this.memory.location = this.memoryLoc;
-        console.log('****memory b4 mem service*****', this.memory.photo);
         return memoryService.createMemory(this.memory)
         .then(() => {
           let res = this.memory;
