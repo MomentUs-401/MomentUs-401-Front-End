@@ -5,7 +5,7 @@ require('./_create-memory.scss');
 module.exports = {
   template: require('./create-memory.html'),
   controllerAs: 'createMemoryCtrl',
-  controller: ['$log', '$rootScope', 'memoryService', 'NgMap', function($log, $rootScope, memoryService, NgMap) {
+  controller: ['$log', '$rootScope', 'memoryService', 'NgMap', '$location', function($log, $rootScope, memoryService, NgMap, $location) {
 
     this.$onInit = () => {
       $log.debug('CreateMemoryController');
@@ -46,6 +46,7 @@ module.exports = {
           $rootScope.$emit('newMemoryCreated');
           return res;
         })
+        .then(() => $location.url('/dashboard'))
         .catch(err => $log.error(err));
       };
     };
