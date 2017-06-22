@@ -8,11 +8,17 @@
     line-height: 2em;
   }
 
-  .labels {
-    font-weight: bold;
-  }
-
   .memory-container {
     margin-top: 2em;
+
+    .labels {
+      font-weight: bold;
+    }
+  }
+
+  .controls-container {
+    .btn {
+      margin-bottom: 1em;
+    }
   }
 }
