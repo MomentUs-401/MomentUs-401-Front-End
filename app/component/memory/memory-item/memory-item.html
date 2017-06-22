@@ -38,9 +38,11 @@
     </div>
   </div>
 
-  <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
+  <div class="controls-container">
+    <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
 
-  <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
+    <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
 
-  <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+    <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+  </div>
 </section>
