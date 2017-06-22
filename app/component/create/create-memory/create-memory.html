@@ -81,7 +81,7 @@
       <label for="uploadPhoto" class="col-sm-2 control-label">Upload Photo</label>
       <div class="col-sm-10">
       <span ng-hide="createMemoryCtrl.memory.photo" ngf-select type="photo" name="photoSelect" ng-model="createMemoryCtrl.memory.photo" class="btn btn-default choose-file">Choose File</span>
-      <span ng-click="createMemoryCtrl.memory.photo = null" ng-show="createMemoryCtrl.memory.photo">Remove File</span>
+      <button ng-click="createMemoryCtrl.memory.photo = null" ng-show="createMemoryCtrl.memory.photo" class="btn btn-default">Remove File</button>
       <span>{{createMemoryCtrl.memory.photo.name}}</span>
       <img ng-show="createMemoryCtrl.memory.photo.$valid" ngf-thumbnail="createMemoryCtrl.memory.photo">
     </div>
