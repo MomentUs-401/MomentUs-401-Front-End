@@ -1,6 +1,6 @@
 'use strict';
 
-// require('./_memory-item.scss');
+require('./_memory-item.scss');
 
 module.exports = {
   template: require('./memory-item.html'),
