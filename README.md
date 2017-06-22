@@ -84,7 +84,7 @@ Note: Application requests will be unsuccessful without essential environment va
 
 Enter into terminal window:
 1. Create Account:
-  * Template: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
+  * Memory: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
   * Example: `http POST https://momentus-backend1.herokuapp.com/api/login username=abigail email=abs@white.com password=123456789`
 2. Fetch Account:
   * Template: `http GET https://momentus-backend1.herokuapp.com/signin -a <email>:<password>`
@@ -96,6 +96,15 @@ Enter into terminal window:
 ### Memory API
 **Objective:** Fetch provider information based on Location and Insurance Provider input.
 
+1. Create Account:
+  * Memory: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
+  * Example: `http POST https://momentus-backend1.herokuapp.com/api/login username=abigail email=abs@white.com password=123456789`
+2. Fetch Account:
+  * Memory: `http GET https://momentus-backend1.herokuapp.com/signin -a <email>:<password>`
+  * Example: `http GET https://momentus-backend1.herokuapp.com/api/signin -a abswhite:1234`
+4. Delete Account:  
+  * Memory: `http DELETE https://momentus-backend1.herokuapp.com/delete/<user-id> 'Authorization:Bearer <token>'`
+  * Example: `http DELETE https://momentus-backend1.herokuapp.com/update/1093982398738957329857 'Authorization:Bearer <token>'`
 
 
 
