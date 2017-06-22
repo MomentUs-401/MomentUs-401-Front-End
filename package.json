@@ -16,7 +16,9 @@
     "heroku-postbuild": "webpack --progress",
     "lint": "eslint ./**",
     "test-watch": "karma start --auto-watch",
-    "build-watch": "webpack-dev-server --inline --hot"
+    "build-watch": "webpack-dev-server --inline --hot",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
