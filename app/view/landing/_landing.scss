@@ -17,12 +17,22 @@
 
   .join-container {
 
+    margin-left: auto;
+    margin-right: auto;
+
     .join-inner {
+
+      margin-left: auto;
+      margin-right: auto;
 
       .form-msg {
         font-size: 2.5vh;
         margin-top: 1%;
         margin-left: 5%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 190px;
+        text-align: center;
 
         a {
           padding: 1%;
