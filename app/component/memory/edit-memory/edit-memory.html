@@ -22,7 +22,7 @@
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="date">Date:</label>
-    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.date }}</span>
+    <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.date | date }}</span>
     <div class="col-md-8 col-md-offset-2">
       <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memoryUpdate.date">
     </div>
