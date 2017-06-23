@@ -16,17 +16,18 @@
     <custom-marker
     ng-repeat="markers in mapCtrl.markers"
     id="{{ markers._id }}"
-    position="{{ markers.location.lat }}, {{ markers.location.lng }}"
+    position="{{ markers.location.lat }}, {{ markers.location.lng + 50}}"
     icon="../../../assets/lock-marker.png"
-    on-click="mapCtrl.closeCustomMarker()">
+    on-click="mapCtrl.closeCustomMarker()"
+    class="custom-marker">
 
-    <div style="background-color:white;">
-      <img src="{{ markers.photo.imageURI }}">
-      <p>{{ markers.title }}</p>
-      <p>{{ markers.description }}</p>
-      <p>{{ markers.date }}</p>
-      <p>{{ markers.songTitle }}</p>
-      <p>{{ markers.friends }}</p>
+    <div class="custom-div">
+      <img src="{{ markers.photo.imageURI }}" class="memory-img">
+      <p>Title: {{ markers.title }}</p>
+      <p>Description: {{ markers.description }}</p>
+      <p>Date: {{ markers.date }}</p>
+      <p>Song: {{ markers.songTitle }}</p>
+      <p>Friends: {{ markers.friends }}</p>
     </div>
   </custom-marker>
   </map>
