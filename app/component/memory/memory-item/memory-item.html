@@ -2,24 +2,35 @@
   <div ng-if="!memoryItemCtrl.showEditMemory">
     <div class="memory-container">
 
-      <div class="labels col-sm-4">Title:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.title }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Title:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.title }}</div>
+      </div>
 
-      <div class="labels col-sm-4">Description:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.description }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Description:</div>
+        <div "col-sm-6">{{ memoryItemCtrl.memory.description }}</div>
+      </div>
 
-      <div class="labels col-sm-4">Location:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.location.name }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Location:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.location.name }}</div>
+      </div>
 
-      <div class="labels col-sm-4">Date:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.date | date : 'longDate' }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Date:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.date | date : 'longDate' }}</div>
+      </div>
 
-      <div class="labels col-sm-4">Song:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.songTitle }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Song:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.songTitle }}</div>
+      </div>
 
-
-      <div class="labels col-sm-4">Friends:</div>
-      <div "col-sm-8">{{ memoryItemCtrl.memory.friends }}</div>
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Friends:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.friends }}</div>
+      </div>
 
       <div>
         <img ngf-thumbnail="memoryItemCtrl.memory.photo.imageURI">
