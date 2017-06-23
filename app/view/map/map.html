@@ -23,11 +23,11 @@
 
     <div class="custom-div">
       <img src="{{ markers.photo.imageURI }}" class="memory-img">
-      <p>{{ markers.title }}</p>
-      <p>{{ markers.description }}</p>
-      <p>{{ markers.date | date : 'mediumDate'}}</p>
-      <p>{{ markers.songTitle }}</p>
-      <p>{{ markers.friends }}</p>
+      <p>Title: {{ markers.title }}</p>
+      <p>Description: {{ markers.description }}</p>
+      <p>Date: {{ markers.date }}</p>
+      <p>Song: {{ markers.songTitle }}</p>
+      <p>Friends: {{ markers.friends }}</p>
     </div>
   </custom-marker>
   </map>

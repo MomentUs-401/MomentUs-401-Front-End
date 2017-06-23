@@ -7,14 +7,20 @@ map {
 }
 
 .custom-div {
+  text-align: center;
   background-color: white;
+  border-radius: 10px;
+  max-width: 200px;
+
   p {
     line-height: 1.5em;
   }
+
 }
 
 .memory-img {
   max-height: 50px;
+  margin: 0 auto;
 }
 
 .custom-marker {
