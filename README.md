@@ -4,7 +4,7 @@
 # MomentUs 401 Final
 
 ## Application Summary
-'MomentUs' is a digital-scrapbook website that allows users to create and log in to personal accounts to create and store Memories based on location. Users can create, update, view, and delete Memories, as well as view all Memories of all users visually via pins on a map. The Front End is developed in Angular 1 and JavaScript and the Back End is developed in Node.js and JavaScript. Both repositories can be accessed in the [MomentUs repository](https://github.com/MomentUs-401).
+'MomentUs' is a digital-scrapbook website that allows users to create and log in to personal accounts to create and store Memories based on location. Users can create, update, view, and delete Memories, as well as view all Memories of all users visually via pins on a map. The Front End is developed in AngularJS 1 and JavaScript and the Back End is developed in Node.js and JavaScript. Both repositories can be accessed in the [MomentUs repository](https://github.com/MomentUs-401).
 
 
 ### Structure and Resources
@@ -41,6 +41,9 @@ _____
 * [Node.js](https://nodejs.org/en/): Server-side JavaScript environment
 * [AWS](https://aws.amazon.com/): Upload Photo storage and functionality
 * [Mongo DataBase](https://www.mongodb.com/): Maintain user registration data
+* [AngularJS](https://angularjs.org/): HTML for web applications
+* [Webpack](https://webpack.js.org/): Module bundler
+* [Karma](https://karma-runner.github.io/1.0/index.html): Test runner for Angular JS
 * [Heroku](https://www.heroku.com): Deployment (Staging and Production Environments)
 * [Express](https://expressjs.com/): Middleware functionality
 * [Mongoose](http://mongoosejs.com/): Manage asynchronous environment
@@ -79,34 +82,55 @@ Note: Application requests will be unsuccessful without essential environment va
 1. First, `npm i` to download all resources onto the local machine.
 2. In terminal, run files using `npm run build-watch`.
 
+#### MongoDB
+1. Open Mongo Shell by entering `mongod --dbpath ./db` in the local machine terminal.
+    * Verify shell by receiving localhost assignment in terminal window.
+2. In a separate terminal tab, access Mongo environment by entering `mongo`.
+2. After creating a db entry (see steps above), you can view the database by entering `show dbs`.
+3. After verifying database creation in Step 2, you can enter the database environment by entering `use <database name>`.
+4. To view database contents, enter `db.users.find()` in tab.
+5. To delete database contents, enter `db.users.drop()`
+
 ### Create and Modify User
 **Objective:** Create, retrieve, modify, and delete user account info from MongoDB.
+* Utilize httpie, and enter into terminal window:
 
-Enter into terminal window:
-1. Create Account:
-  * Memory: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
+1. Create Memory:
+  * Template: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
   * Example: `http POST https://momentus-backend1.herokuapp.com/api/login username=abigail email=abs@white.com password=123456789`
+
 2. Fetch Account:
-  * Template: `http GET https://momentus-backend1.herokuapp.com/signin -a <email>:<password>`
-  * Example: `http GET https://momentus-backend1.herokuapp.com/api/signin -a abswhite:1234`
+  * Template: `http GET https://momentus-backend1.herokuapp.com/memory -a <username>:<password> 'Authorization:Bearer <token>'`
+  * Example: `http GET https://momentus-backend1.herokuapp.com/api/signin -a abswhite:123456789 'Authorization:Bearer <token>'`
+
 4. Delete Account:  
   * Template: `http DELETE https://momentus-backend1.herokuapp.com/delete/<user-id> 'Authorization:Bearer <token>'`
   * Example: `http DELETE https://momentus-backend1.herokuapp.com/update/1093982398738957329857 'Authorization:Bearer <token>'`
 
 ### Memory API
-**Objective:** Fetch provider information based on Location and Insurance Provider input.
+**Objective:** Create, update, retrieve, and delete user memories.
 
-1. Create Account:
-  * Memory: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
-  * Example: `http POST https://momentus-backend1.herokuapp.com/api/login username=abigail email=abs@white.com password=123456789`
-2. Fetch Account:
-  * Memory: `http GET https://momentus-backend1.herokuapp.com/signin -a <email>:<password>`
-  * Example: `http GET https://momentus-backend1.herokuapp.com/api/signin -a abswhite:1234`
-4. Delete Account:  
-  * Memory: `http DELETE https://momentus-backend1.herokuapp.com/delete/<user-id> 'Authorization:Bearer <token>'`
-  * Example: `http DELETE https://momentus-backend1.herokuapp.com/update/1093982398738957329857 'Authorization:Bearer <token>'`
+#### Single User
+1. Create Memory:
+  * Template: `http -f POST https://momentus-backend1.herokuapp.com/memory title=<input> description=<input> date=<input> location:<input> songTitle:<input> friends:<input> image@~<file path>`
+  * Example: `http -f POST https://momentus-backend1.herokuapp.com/memory title='Bought jeans' description='we went shopping' date=2017-06-21T23:12:16.208Z location:'{lat:10, lng:10, name:'address'}' songTitle:'i like dirt' friends:'abbi and allie' image@~/assets/pic.jpg`
 
+2. Fetch Memories: Retrieves single user's memories
+  * Template: `http GET https://momentus-backend1.herokuapp.com/memory/<memoryId> 'Authorization:Bearer <token>'`
+  * Example: `http GET https://momentus-backend1.herokuapp.com/memory/338398320983 'Authorization:Bearer 1234567891234838942750934257'`
 
+3. Update Memory:
+  * Template: `http PUT https://momentus-backend1.herokuapp.com/memory/<memoryId> -a  description=<input> 'Authorization:Bearer <token>'`
+  * Example: `http PUT https://momentus-backend1.herokuapp.com/memory/338398320983  description='we pet goats' 'Authorization:Bearer 1234567891234838942750934257'`
+
+4. Delete Memory:  
+  * Template: `http DELETE https://momentus-backend1.herokuapp.com/memory/338398320983 'Authorization:Bearer 1234567891234838942750934257'`
+  * Example: `http DELETE https://momentus-backend1.herokuapp.com/memory/338398320983 'Authorization:Bearer 1234567891234838942750934257'`
+
+#### All Users
+  2. Fetch All Memories: Retrieves all users' memories
+    * Template: `http GET https://momentus-backend1.herokuapp.com/map/ 'Authorization:Bearer <token>'`
+    * Example: `http GET https://momentus-backend1.herokuapp.com/map/ 'Authorization:Bearer 1234567891234838942750934257'`
 
 ### License
 

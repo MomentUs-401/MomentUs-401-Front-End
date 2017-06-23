@@ -2,6 +2,10 @@
 
 .edit-memory {
 
+  .block {
+    display: block;
+    float: none;
+  }
 
   .form-horizontal {
     margin-top: $gutter-sm*1.5;
