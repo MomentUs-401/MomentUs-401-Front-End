@@ -1,35 +1,25 @@
 <section class="memory-item">
   <div ng-if="!memoryItemCtrl.showEditMemory">
     <div class="memory-container">
-      <div>
-        <span class="labels">Title:</span>
-        <span>{{ memoryItemCtrl.memory.title }}</span>
-      </div>
 
-      <div>
-        <span class="labels">Description:</span>
-        <span>{{ memoryItemCtrl.memory.description }}</span>
-      </div>
+      <div class="labels col-sm-4">Title:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.title }}</div>
 
-      <div>
-        <span class="labels">Location:</span>
-        <span>{{ memoryItemCtrl.memory.location.name }}</span>
-      </div>
+      <div class="labels col-sm-4">Description:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.description }}</div>
 
-      <div>
-        <span class="labels">Date:</span>
-        <span>{{ memoryItemCtrl.memory.date | date : 'longDate' }}</span>
-      </div>
+      <div class="labels col-sm-4">Location:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.location.name }}</div>
 
-      <div>
-        <span class="labels">Song:</span>
-        <span>{{ memoryItemCtrl.memory.songTitle }}</span>
-      </div>
+      <div class="labels col-sm-4">Date:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.date | date : 'longDate' }}</div>
 
-      <div>
-        <span class="labels">Friends:</span>
-        <span>{{ memoryItemCtrl.memory.friends }}</span>
-      </div>
+      <div class="labels col-sm-4">Song:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.songTitle }}</div>
+
+
+      <div class="labels col-sm-4">Friends:</div>
+      <div "col-sm-8">{{ memoryItemCtrl.memory.friends }}</div>
 
       <div>
         <img ngf-thumbnail="memoryItemCtrl.memory.photo.imageURI">
@@ -44,7 +34,7 @@
 
   <div class="controls-container" ng-if="!memoryItemCtrl.showEditMemory">
     <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
-    <a href="#!/map" class="btn btn-default">Revisit</a>
+    <a href="#!/map?lat={{memoryItemCtrl.memory.location.lat}}&lng={{memoryItemCtrl.memory.location.lng}}" class="btn btn-default">Revisit</a>
     <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
 
   </div>
