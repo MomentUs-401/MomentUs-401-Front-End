@@ -12,6 +12,7 @@
             ng-model="createMemoryCtrl.memory.title"''
             placeholder="Last Day of Code Fellows JavaScript 401"
             ng-maxlength="100"
+            uib-tooltip="Must not exceed 100 characters"
             required>
         </div>
     </div>
@@ -25,6 +26,7 @@
           ng-model="createMemoryCtrl.memory.description"
           placeholder="We presented our project 'MomentUs' and Scott told us we were his favorite group ever."
           ng-maxlength="1000"
+          uib-tooltip="Must not exceed 1000 characters"
           required>
       </div>
     </div>
@@ -64,6 +66,7 @@
           ng-model="createMemoryCtrl.memory.songTitle"
           placeholder="'We are the Champions'"
           ng-maxlength="100"
+          uib-tooltip="Must not exceed 100 characters"
           >
       </div>
     </div>
@@ -77,6 +80,7 @@
           ng-model="createMemoryCtrl.memory.friends"
           placeholder="Steven, Allie, David, Shelly, Abigail, Izzy the Dogg"
           ng-maxlength="200"
+          uib-tooltip="Must not exceed 200 characters"
           >
       </div>
     </div>
