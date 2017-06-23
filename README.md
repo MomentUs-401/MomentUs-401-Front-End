@@ -68,6 +68,41 @@ _____
   * Google Docs for larger overview, daily stand-ups
   * Slack for basic communication
 _____
+## Front End Overview
+  * Views
+  * Landing
+Sign Up
+Logo
+Description of website
+Username, password, email (all required)
+Signup Button
+Link to Login
+Login
+Logo
+Username, password (validation)
+Login Button
+Link to Signup
+User Dashboard
+Title/ navigation bar at top
+Button to “Create” Memory
+Table to summarize event
+Preview line: Id, title, location, date
+Button to expand preview line
+Expanded version contains all memory information
+“Edit”  button
+“Revisit” button
+“Delete” button
+Create Memory
+Title/ navigation bar at top
+Input for all items (too tired to write all of it.) See here: https://drive.google.com/drive/folders/0B2sAds5vTh2gVlptYVRpdml0UUU)
+“Save” Button
+View Map
+Title/ navigation bar at top
+Filter by location (date?)
+Map that takes up most of page
+Contains markers of memories
+Pop-up when marker is clicked that contains all of event info
+
 ## API Endpoints
 Deployed endpoint: `https://momentus-backend1.herokuapp.com`
 
