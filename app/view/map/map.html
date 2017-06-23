@@ -1,7 +1,7 @@
 <div class="all-pins`">
 
   <map
-    center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]" 
+    center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]"
     zoom="18"
     map-type-id="MapTypeId.ROADMAP"
     tilt="45">
@@ -9,7 +9,7 @@
     <marker
       ng-repeat="markers in mapCtrl.markers"
       position="{{ markers.location.lat }}, {{ markers.location.lng }}"
-      icon="../../../assets/lock-marker.png"
+      icon="https://s3-us-west-2.amazonaws.com/lab-18/lock-marker1.png"
       on-click="mapCtrl.showCustomMarker(markers._id)">
     </marker>
 
