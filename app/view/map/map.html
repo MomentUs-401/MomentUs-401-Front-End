@@ -1,18 +1,34 @@
 <div class="all-pins`">
 
-  <map center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]" zoom="15" map-type-id="MapTypeId.ROADMAP" tilt="45">
-    <marker ng-repeat="markers in mapCtrl.markers" position="{{ markers.location.lat }}, {{ markers.location.lng }}" icon="../../../assets/lock-marker.png" on-click="vm.showCustomMarker()">
+  <map 
+    center="{{ mapCtrl.markers[0].location }}" 
+    zoom="18" 
+    map-type-id="MapTypeId.ROADMAP" 
+    tilt="45">
+    
+    <marker 
+      ng-repeat="markers in mapCtrl.markers" 
+      position="{{ markers.location.lat }}, {{ markers.location.lng }}"
+      icon="../../../assets/lock-marker.png"
+      on-click="mapCtrl.showCustomMarker(markers._id)">  
     </marker>
-    <custom-marker ng-repeat="markers in mapCtrl.markers" position="{{ markers.location.lat }}, {{ markers.location.lng }}" icon="../../../assets/lock-marker.png" on-click="vm.hideCustomMarker()">
-      <div style="background-color:white;">
-        <img src="{{ markers.photo.imageURI }}">
-        <p>{{ markers.title }}</p>
-        <p>{{ markers.description }}</p>
-        <p>{{ markers.date }}</p>
-        <p>{{ markers.songTitle }}</p>
-        <p>{{ markers.friends }}</p>
-      </div>
-    </custom-marker>
+    
+    <custom-marker 
+    ng-repeat="markers in mapCtrl.markers" 
+    id="{{ markers._id }}"
+    position="{{ markers.location.lat }}, {{ markers.location.lng }}" 
+    icon="../../../assets/lock-marker.png"
+    on-click="mapCtrl.closeCustomMarker()">
+    
+    <div style="background-color:white;">
+      <img src="{{ markers.photo.imageURI }}">
+      <p>{{ markers.title }}</p>
+      <p>{{ markers.description }}</p>
+      <p>{{ markers.date }}</p>
+      <p>{{ markers.songTitle }}</p>
+      <p>{{ markers.friends }}</p>
+    </div>
+  </custom-marker>
   </map>
 
   <input

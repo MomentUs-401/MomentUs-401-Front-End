@@ -16,10 +16,22 @@ module.exports = [
 
       let vm = this;
       vm.markers = [];
-
-      vm.markerText;
-
-      this.location = $location.search();
+      
+      NgMap.getMap()
+      .then(function(map) {
+        console.log(map);
+        let x = map.customMarkers;
+        Object.keys(x).forEach(ele => x[ele].visible = false)
+        
+        vm.showCustomMarker= function(evt, id) {
+          console.log(id);
+          map.customMarkers[id].setVisible(true);
+          map.customMarkers[id].setPosition(this.getPosition());
+        };
+        vm.closeCustomMarker= function(evt) {
+          this.style.display = 'none';
+        };
+      });
 
       vm.types = ['geocode'];
       this.placeChanged = function() {
@@ -31,10 +43,10 @@ module.exports = [
       });
       vm.fetchAllMemories = () => {
         memoryService.fetchAllMemories()
-          .then(markers => {
-            vm.markers = markers;
-            // vm.icon = '../../../assets/lock-marker.png';
-          });
+          .then(memories => {
+            vm.markers = memories;
+          }
+        );
       };
       vm.fetchAllMemories();
     };
