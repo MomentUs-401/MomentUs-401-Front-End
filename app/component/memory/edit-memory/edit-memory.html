@@ -7,24 +7,24 @@
   <div class="form-group">
     <label class="control-label col-sm-2" for="title">Title:</label>
     <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.title }}</span>
-    <div class="col-md-8 col-md-offset-2">
-      <input class="form-control" type="text" name="title" ng-model="editMemoryCtrl.memoryUpdate.title" ng-maxlength="100">
+    <div class="col-md-8 col-md-offset-2 block">
+      <input class="form-control block" type="text" name="title" ng-model="editMemoryCtrl.memoryUpdate.title" ng-maxlength="100">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="description">Description:</label>
     <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.description }}</span>
-    <div class="col-md-8 col-md-offset-2">
-      <input class="form-control" type="text" name="description" ng-model="editMemoryCtrl.memoryUpdate.description" ng-maxlength="1000">
+    <div class="col-md-8 col-md-offset-2 block">
+      <input class="form-control block" type="text" name="description" ng-model="editMemoryCtrl.memoryUpdate.description" ng-maxlength="1000">
     </div>
   </div>
 
   <div class="form-group">
     <label class="control-label col-sm-2" for="date">Date:</label>
     <span class="col-sm-8 col-sm-offset-1">{{ editMemoryCtrl.memory.date | date : 'longDate' }}</span>
-    <div class="col-md-8 col-md-offset-2">
-      <input class="form-control" type="date" name="date" ng-model="editMemoryCtrl.memoryUpdate.date">
+    <div class="col-md-8 col-md-offset-2 block">
+      <input class="form-control block" type="date" name="date" ng-model="editMemoryCtrl.memoryUpdate.date">
     </div>
   </div>
 
