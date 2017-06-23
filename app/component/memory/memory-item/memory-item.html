@@ -40,8 +40,11 @@
 
   <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
 
+  <button class="btn btn-default cancel-btn" ng-if="memoryItemCtrl.showEditMemory" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Cancel</button>
+
   <div class="controls-container" ng-if="!memoryItemCtrl.showEditMemory">
     <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
     <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+
   </div>
 </section>
