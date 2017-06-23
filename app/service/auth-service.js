@@ -51,14 +51,14 @@ module.exports = [
       };
 
       return $http.post(url, user, config)
-      .then(res => {
-        $log.log('success', res.data);
-        return setToken(res.data);
-      })
-      .catch(err => {
-        $log.error('failure', err);
-        return $q.reject(err);
-      });
+        .then(res => {
+          $log.log('success', res.data);
+          return setToken(res.data);
+        })
+        .catch(err => {
+          $log.error('failure', err);
+          return $q.reject(err);
+        });
     };
 
     service.login = function(user) {
@@ -74,14 +74,14 @@ module.exports = [
       };
 
       return $http.get(url, config)
-      .then(res => {
-        $log.log('success', res.data);
-        return setToken(res.data);
-      })
-      .catch(err => {
-        $log.error('failure', err.message);
-        return $q.reject(err);
-      });
+        .then(res => {
+          $log.log('success', res.data);
+          return setToken(res.data);
+        })
+        .catch(err => {
+          $log.error('failure', err.message);
+          return $q.reject(err);
+        });
     };
     return service;
   },

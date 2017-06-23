@@ -23,20 +23,18 @@ module.exports = [
 
 
       NgMap.getMap()
-      .then(function(map) {
-        console.log(map);
-        let x = map.customMarkers;
-        Object.keys(x).forEach(ele => x[ele].visible = false)
+        .then(function(map) {
+          let x = map.customMarkers;
+          Object.keys(x).forEach(ele => x[ele].visible = false);
 
-        vm.showCustomMarker= function(evt, id) {
-          console.log(id);
-          map.customMarkers[id].setVisible(true);
-          map.customMarkers[id].setPosition(this.getPosition());
-        };
-        vm.closeCustomMarker= function(evt) {
-          this.style.display = 'none';
-        };
-      });
+          vm.showCustomMarker= function(evt, id) {
+            map.customMarkers[id].setVisible(true);
+            map.customMarkers[id].setPosition(this.getPosition());
+          };
+          vm.closeCustomMarker= function(evt) {
+            this.style.display = 'none';
+          };
+        });
 
 
 
