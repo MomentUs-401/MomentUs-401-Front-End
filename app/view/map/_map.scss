@@ -6,6 +6,22 @@ map {
   height: 70vh;
 }
 
+.custom-div {
+  background-color: white;
+  p {
+    line-height: 1.5em;
+  }
+}
+
+.memory-img {
+  max-height: 50px;
+}
+
+.custom-marker {
+  padding: 10px;
+  max-height: 200px;
+}
+
 .mark-filter {
   margin-top: 0.5vh;
 }
