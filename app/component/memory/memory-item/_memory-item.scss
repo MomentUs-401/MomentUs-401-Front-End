@@ -16,9 +16,19 @@
     }
   }
 
+  .cancel-btn {
+      background-color: $brand-primary;
+      border-color: $brand-primary;
+      margin-top: 1em;
+
+      &:hover {
+        background: $brand-primary/1.5;
+      }
+  }
+
   .controls-container {
     margin-top: 1.5em;
-    
+
     .btn {
       margin-bottom: 1em;
     }
