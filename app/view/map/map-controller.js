@@ -7,9 +7,10 @@ module.exports = [
   '$log',
   '$location',
   '$rootScope',
+  '$filter',
   'memoryService',
   'NgMap',
-  function($log, $location, $rootScope, memoryService, NgMap) {
+  function($log, $location, $rootScope, $filter, memoryService, NgMap) {
     this.$onInit = () => {
       $log.debug('Map Controller');
       $rootScope.googleMapsUrl = `https://maps.googleapis.com/maps/api/js?key=${__API_KEY__}`;
@@ -50,6 +51,9 @@ module.exports = [
         memoryService.fetchAllMemories()
           .then(memories => {
             vm.markers = memories;
+            vm.markers.forEach(e => {
+              e.date = $filter('date')(e.date, 'longDate');
+            })
           });
       };
       vm.fetchAllMemories();
