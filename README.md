@@ -97,11 +97,11 @@ Note: Application requests will be unsuccessful without essential environment va
 
 1. Create Memory:
   * Template: `http POST https://momentus-backend1.herokuapp.com/signup <username>=<input> <email>=<input@input.com> <password>=<input>`
-  * Example: `http POST https://momentus-backend1.herokuapp.com/api/login username=abigail email=abs@white.com password=123456789`
+  * Example: `http POST https://momentus-backend1.herokuapp.com/api/signup username=abigail email=abs@white.com password=123456789`
 
 2. Fetch Account:
-  * Template: `http GET https://momentus-backend1.herokuapp.com/memory -a <username>:<password> 'Authorization:Bearer <token>'`
-  * Example: `http GET https://momentus-backend1.herokuapp.com/api/signin -a abswhite:123456789 'Authorization:Bearer <token>'`
+  * Template: `http GET https://momentus-backend1.herokuapp.com/api/login -a <username>:<password> 'Authorization:Bearer <token>'`
+  * Example: `http GET https://momentus-backend1.herokuapp.com/api/login -a abswhite:123456789`
 
 4. Delete Account:  
   * Template: `http DELETE https://momentus-backend1.herokuapp.com/delete/<user-id> 'Authorization:Bearer <token>'`
@@ -112,8 +112,8 @@ Note: Application requests will be unsuccessful without essential environment va
 
 #### Single User
 1. Create Memory:
-  * Template: `http -f POST https://momentus-backend1.herokuapp.com/memory title=<input> description=<input> date=<input> location:<input> songTitle:<input> friends:<input> image@~<file path>`
-  * Example: `http -f POST https://momentus-backend1.herokuapp.com/memory title='Bought jeans' description='we went shopping' date=2017-06-21T23:12:16.208Z location:'{lat:10, lng:10, name:'address'}' songTitle:'i like dirt' friends:'abbi and allie' image@~/assets/pic.jpg`
+  * Template: `http -f POST https://momentus-backend1.herokuapp.com/api/memory title=<input> description=<input> date=<input> location:<input> songTitle:<input> friends:<input> image@~<file path>`
+  * Example: `http -f POST https://momentus-backend1.herokuapp.com/api/memory title='Bought jeans' description='we went shopping' date=2017-06-21T23:12:16.208Z location:'{lat:10, lng:10, name:'address'}' songTitle:'i like dirt' friends:'abbi and allie' image@~/assets/pic.jpg`
 
 2. Fetch Memories: Retrieves single user's memories
   * Template: `http GET https://momentus-backend1.herokuapp.com/memory/<memoryId> 'Authorization:Bearer <token>'`
