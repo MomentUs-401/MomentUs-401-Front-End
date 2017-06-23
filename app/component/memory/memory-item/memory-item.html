@@ -44,7 +44,7 @@
 
   <div class="controls-container" ng-if="!memoryItemCtrl.showEditMemory">
     <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
-    <a href="#!/map" class="btn btn-default">Revisit</a>
+    <a href="#!/map?lat={{memoryItemCtrl.memory.location.lat}}&lng={{memoryItemCtrl.memory.location.lng}}" class="btn btn-default">Revisit</a>
     <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
 
   </div>
