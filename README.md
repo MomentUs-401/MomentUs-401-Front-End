@@ -2,6 +2,7 @@
 
 ![momentus-logo](./assets/logo-small.png)
 # MomentUs 401 Final
+[Abigail White](https://github.com/abswhite) | [Shelly Tang](https://github.com/shellytang) | [David Wheeler](https://github.com/DavidGWheeler) | [Allie Grampa](https://github.com/agrampa) | [Steven Johnson](https://github.com/StevenJohnson86)
 
 ## Application Summary
 'MomentUs' is a digital-scrapbook website that allows users to create and log in to personal accounts to create and store Memories based on location. Users can create, update, view, and delete Memories, as well as view all Memories of all users visually via pins on a map. The Front End is developed in AngularJS 1 and JavaScript and the Back End is developed in Node.js and JavaScript. Both repositories can be accessed in the [MomentUs repository](https://github.com/MomentUs-401).
@@ -137,3 +138,4 @@ Note: Application requests will be unsuccessful without essential environment va
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ### Acknowledgments
+Thank you to all of the Code Fellows staff, TAs, and even Scott!
