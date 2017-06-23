@@ -16,10 +16,10 @@ module.exports = [
 
       let vm = this;
       vm.markers = [];
-      
+
       vm.markerText;
-      
-      
+
+      this.location = $location.search();
 
       vm.types = ['geocode'];
       this.placeChanged = function() {
