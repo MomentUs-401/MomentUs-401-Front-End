@@ -3,10 +3,10 @@
   <map center="{{ mapCtrl.markers[0].location }}" zoom="18" map-type-id="MapTypeId.ROADMAP" tilt="45">
     <marker ng-repeat="markers in mapCtrl.markers" position="{{ markers.location.lat }}, {{ markers.location.lng }}"></marker>
   </map>
-  
+
   <input
     places-auto-complete types="['geocode']"
-    placeholder="Search Other Memories"
+    placeholder="Search memories by location"
     class="input-std"
     on-place-changed="mapCtrl.placeChanged()"
     type="text"
