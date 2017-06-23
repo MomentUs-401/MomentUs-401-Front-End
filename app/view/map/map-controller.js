@@ -16,6 +16,10 @@ module.exports = [
 
       let vm = this;
       vm.markers = [];
+      
+      vm.markerText;
+      
+      
 
       vm.types = ['geocode'];
       this.placeChanged = function() {
@@ -29,6 +33,7 @@ module.exports = [
         memoryService.fetchAllMemories()
           .then(markers => {
             vm.markers = markers;
+            // vm.icon = '../../../assets/lock-marker.png';
           });
       };
       vm.fetchAllMemories();
