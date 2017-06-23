@@ -1,6 +1,6 @@
 <div class="all-pins`">
 
-  <map center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]" zoom="18" map-type-id="MapTypeId.ROADMAP" tilt="45">
+  <map center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]" zoom="15" map-type-id="MapTypeId.ROADMAP" tilt="45">
     <marker ng-repeat="markers in mapCtrl.markers" position="{{ markers.location.lat }}, {{ markers.location.lng }}" icon="../../../assets/lock-marker.png" on-click="vm.showCustomMarker()">
     </marker>
     <custom-marker ng-repeat="markers in mapCtrl.markers" position="{{ markers.location.lat }}, {{ markers.location.lng }}" icon="../../../assets/lock-marker.png" on-click="vm.hideCustomMarker()">
