@@ -1,25 +1,25 @@
 <div class="all-pins`">
 
-  <map 
-    center="{{ mapCtrl.markers[0].location }}" 
-    zoom="18" 
-    map-type-id="MapTypeId.ROADMAP" 
+  <map
+    center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]" 
+    zoom="18"
+    map-type-id="MapTypeId.ROADMAP"
     tilt="45">
-    
-    <marker 
-      ng-repeat="markers in mapCtrl.markers" 
+
+    <marker
+      ng-repeat="markers in mapCtrl.markers"
       position="{{ markers.location.lat }}, {{ markers.location.lng }}"
       icon="../../../assets/lock-marker.png"
-      on-click="mapCtrl.showCustomMarker(markers._id)">  
+      on-click="mapCtrl.showCustomMarker(markers._id)">
     </marker>
-    
-    <custom-marker 
-    ng-repeat="markers in mapCtrl.markers" 
+
+    <custom-marker
+    ng-repeat="markers in mapCtrl.markers"
     id="{{ markers._id }}"
-    position="{{ markers.location.lat }}, {{ markers.location.lng }}" 
+    position="{{ markers.location.lat }}, {{ markers.location.lng }}"
     icon="../../../assets/lock-marker.png"
     on-click="mapCtrl.closeCustomMarker()">
-    
+
     <div style="background-color:white;">
       <img src="{{ markers.photo.imageURI }}">
       <p>{{ markers.title }}</p>
