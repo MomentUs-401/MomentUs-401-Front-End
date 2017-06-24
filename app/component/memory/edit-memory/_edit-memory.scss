@@ -1,0 +1,33 @@
+@import '../scss/lib/theme/theme';
+
+.edit-memory {
+
+  // span {
+  //   margin-bottom: 1em;
+  // }
+  .block {
+    display: block;
+    float: none;
+  }
+
+  .form-horizontal {
+    margin-top: $gutter-sm*1.5;
+
+    span {
+      padding: 0;
+    }
+
+    .thumbnail-container {
+      .btn-info {
+        width: 20vh;
+        display: block;
+      }
+  }
+
+  .btn {
+    margin-top: $gutter-sm;
+  }
+
+
+  }
+}

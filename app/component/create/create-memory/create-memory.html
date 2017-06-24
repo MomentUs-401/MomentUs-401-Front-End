@@ -1,0 +1,104 @@
+<section class="create-memory">
+  <h2>Create Memory</h2>
+
+  <form name="createMemoryForm" class="form-horizontal" ng-submit="createMemoryCtrl.createMemory()">
+
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Title<span label="required field" class="red">*</span></label>
+        <div class="col-sm-10">
+          <input type="text"
+            name="title"
+            class="form-control"
+            ng-model="createMemoryCtrl.memory.title"''
+            placeholder="Last Day of Code Fellows JavaScript 401"
+            ng-maxlength="100"
+            uib-tooltip="Must not exceed 100 characters"
+            required>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">Description<span label="required field" class="red">*</span></label>
+      <div class="col-sm-10">
+        <input type="text"
+          name="description"
+          class="form-control"
+          ng-model="createMemoryCtrl.memory.description"
+          placeholder="We presented our project 'MomentUs' and Scott told us we were his favorite group ever."
+          ng-maxlength="1000"
+          uib-tooltip="Must not exceed 1000 characters"
+          required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="location" class="col-sm-2 control-label">Location<span label="required field" class="red">*</span></label>
+      <div class="col-sm-10">
+        <input type="text"
+          places-auto-complete
+          types="['geocode']"
+          on-place-changed="createMemoryCtrl.placeChanged()"
+          name="location"
+          class="form-control"
+          ng-model="createMemoryCtrl.memory.location"
+          placeholder="2901 3rd Avenue, Seattle, WA, United States"
+          required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="date" class="col-sm-2 control-label">Date<span label="required field" class="red">*</span></label>
+      <div class="col-sm-10">
+        <input type="date"
+          name="date"
+          class="form-control"
+          ng-model="createMemoryCtrl.memory.date"
+          required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="song" class="col-sm-2 control-label">Song</label>
+      <div class="col-sm-10">
+        <input type="text"
+          name="song"
+          class="form-control"
+          ng-model="createMemoryCtrl.memory.songTitle"
+          placeholder="'We are the Champions'"
+          ng-maxlength="100"
+          uib-tooltip="Must not exceed 100 characters"
+          >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="friends" class="col-sm-2 control-label">Friends</label>
+      <div class="col-sm-10">
+        <input type="text"
+          name="friends"
+          class="form-control"
+          ng-model="createMemoryCtrl.memory.friends"
+          placeholder="Steven, Allie, David, Shelly, Abigail, Izzy the Dogg"
+          ng-maxlength="200"
+          uib-tooltip="Must not exceed 200 characters"
+          >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="uploadPhoto" class="col-sm-2 control-label">Upload Photo</label>
+      <div class="col-sm-10">
+      <span ng-hide="createMemoryCtrl.memory.photo" ngf-select type="photo" name="photoSelect" ng-model="createMemoryCtrl.memory.photo" class="btn btn-default choose-file">Choose File</span>
+      <button ng-click="createMemoryCtrl.memory.photo = null" ng-show="createMemoryCtrl.memory.photo" class="btn btn-default">Remove File</button>
+      <span>{{createMemoryCtrl.memory.photo.name}}</span>
+      <img ng-show="createMemoryCtrl.memory.photo.$valid" ngf-thumbnail="createMemoryCtrl.memory.photo">
+    </div>
+  </div>
+
+
+    <button class="btn btn-default top-margin" type="submit" ng-disabled="createMemoryForm.$invalid">Create Memory</button>
+    <a class="btn btn-default top-margin grey" href="#!/dashboard" role="button">Cancel</a>
+
+  </form>
+</section>
+<ng-map></ng-map>

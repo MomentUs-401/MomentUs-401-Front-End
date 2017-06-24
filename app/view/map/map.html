@@ -1,0 +1,43 @@
+<div class="all-pins`">
+
+  <map
+    center="[{{ mapCtrl.location.lat }}, {{mapCtrl.location.lng}}]"
+    zoom="18"
+    map-type-id="MapTypeId.ROADMAP"
+    tilt="45">
+
+    <marker
+      ng-repeat="markers in mapCtrl.markers"
+      position="{{ markers.location.lat }}, {{ markers.location.lng }}"
+      icon="https://s3-us-west-2.amazonaws.com/lab-18/lock-marker1.png"
+      on-click="mapCtrl.showCustomMarker(markers._id)">
+    </marker>
+
+    <custom-marker
+    ng-repeat="markers in mapCtrl.markers"
+    id="{{ markers._id }}"
+    position="{{ markers.location.lat }}, {{ markers.location.lng + 50}}"
+    icon="../../../assets/lock-marker.png"
+    on-click="mapCtrl.closeCustomMarker()"
+    class="custom-marker">
+
+    <div class="custom-div">
+      <img src="{{ markers.photo.imageURI }}" class="memory-img">
+      <p>Title: {{ markers.title }}</p>
+      <p>Description: {{ markers.description }}</p>
+      <p>Date: {{ markers.date }}</p>
+      <p>Song: {{ markers.songTitle }}</p>
+      <p>Friends: {{ markers.friends }}</p>
+    </div>
+  </custom-marker>
+  </map>
+
+  <input
+    places-auto-complete types="['geocode']"
+    placeholder="Search memories by location"
+    class="input-std"
+    on-place-changed="mapCtrl.placeChanged()"
+    type="text"
+    name="location data"
+    >
+</div>

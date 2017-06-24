@@ -1,0 +1,33 @@
+@import '../scss/lib/base/_base.scss';
+
+
+map {
+  width: 80vw;
+  height: 70vh;
+}
+
+.custom-div {
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  max-width: 200px;
+
+  p {
+    line-height: 1.5em;
+  }
+
+}
+
+.memory-img {
+  max-height: 50px;
+  margin: 0 auto;
+}
+
+.custom-marker {
+  padding: 10px;
+  max-height: 200px;
+}
+
+.mark-filter {
+  margin-top: 0.5vh;
+}

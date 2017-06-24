@@ -1,0 +1,52 @@
+<section class="memory-item">
+  <div ng-if="!memoryItemCtrl.showEditMemory">
+    <div class="memory-container">
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Title:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.title }}</div>
+      </div>
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Description:</div>
+        <div "col-sm-6">{{ memoryItemCtrl.memory.description }}</div>
+      </div>
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Location:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.location.name }}</div>
+      </div>
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Date:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.date | date : 'longDate' }}</div>
+      </div>
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Song:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.songTitle }}</div>
+      </div>
+
+      <div class="row">
+        <div class="labels col-sm-4 col-sm-offset-1">Friends:</div>
+        <div class="col-sm-6">{{ memoryItemCtrl.memory.friends }}</div>
+      </div>
+
+      <div>
+        <img ngf-thumbnail="memoryItemCtrl.memory.photo.imageURI">
+      </div>
+
+    </div>
+  </div>
+
+  <edit-memory-controller ng-if="memoryItemCtrl.showEditMemory" memory="memoryItemCtrl.memory"></edit-memory-controller>
+
+  <button class="btn btn-default cancel-btn" ng-if="memoryItemCtrl.showEditMemory" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Cancel</button>
+
+  <div class="controls-container" ng-if="!memoryItemCtrl.showEditMemory">
+    <button class="btn btn-default" ng-click="memoryItemCtrl.showEditMemory = !memoryItemCtrl.showEditMemory">Edit</button>
+    <a href="#!/map?lat={{memoryItemCtrl.memory.location.lat}}&lng={{memoryItemCtrl.memory.location.lng}}" class="btn btn-default">Revisit</a>
+    <delete-memory-controller memory="memoryItemCtrl.memory"></delete-memory-controller>
+
+  </div>
+</section>

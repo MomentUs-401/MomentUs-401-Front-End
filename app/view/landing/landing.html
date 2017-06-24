@@ -1,0 +1,28 @@
+<section class="landing">
+  <img src="../../../assets/logo-large.png" alt="logo">
+
+  <div class="join-container"
+    ng-if="landingCtrl.showSignup">
+    <div class="join-inner">
+      <signup-controller></signup-controller>
+      <div class="form-msg">
+        <p>Already a member?</p>
+        <a href="/#!/login" ng-click="landingCtrl.showSignup=false">
+          Login
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="!landingCtrl.showSignup" class="join-container">
+    <div class="join-inner">
+      <login-controller></login-controller>
+      <div class="form-msg">
+        <p>Need an account?</p>
+        <a href="/#!/signup" ng-click="landingCtrl.showSignup=true">
+          Sign Up
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

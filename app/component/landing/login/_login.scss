@@ -1,0 +1,25 @@
+@import '../scss/lib/theme/theme';
+
+.login {
+
+  h2 {
+      font-family: $font-ttl;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+  .login-form {
+
+    .btn-default {
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    .input-std {
+      padding: .7%
+    }
+
+  }
+}
