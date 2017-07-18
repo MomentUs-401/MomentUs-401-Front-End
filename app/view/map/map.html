@@ -17,7 +17,7 @@
     ng-repeat="markers in mapCtrl.markers"
     id="{{ markers._id }}"
     position="{{ markers.location.lat }}, {{ markers.location.lng + 50}}"
-    icon="../../../assets/lock-marker.png"
+    icon="https://s3-us-west-2.amazonaws.com/lab-18/lock-marker1.png"
     on-click="mapCtrl.closeCustomMarker()"
     class="custom-marker">
 

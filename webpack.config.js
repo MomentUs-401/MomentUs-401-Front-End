@@ -53,9 +53,12 @@ module.exports = {
         use: 'html-loader',
       },
       {
-        // might need to move this to url-loader
         test: /\.(eot|ttf|woff|svg|png|jpg).*/,
         use: 'url-loader?limit=100000',
+      },
+      {
+        test: /\.(eot|ttf|woff|svg|png|jpg).*/,
+        use: 'file-loader?limit=100000',
       },
       {
         test: /\.scss$/,

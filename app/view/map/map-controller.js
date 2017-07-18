@@ -53,7 +53,7 @@ module.exports = [
             vm.markers = memories;
             vm.markers.forEach(e => {
               e.date = $filter('date')(e.date, 'longDate');
-            })
+            });
           });
       };
       vm.fetchAllMemories();
